@@ -99,7 +99,7 @@ public class GameMenu : MonoBehaviour
 
     private void EnsureEventSystem()
     {
-        if (Object.FindFirstObjectByType<EventSystem>() != null)
+        if (UnityEngine.Object.FindFirstObjectByType<EventSystem>() != null)
             return;
 
         GameObject eventSystem = new GameObject("EventSystem", typeof(EventSystem), typeof(StandaloneInputModule));
