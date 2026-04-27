@@ -1,9 +1,10 @@
 using System;
 using UnityEngine;
-using UnityEngine.EventSystems;
+using UnityEngine.Audio;
 
 public class GameMenu : MonoBehaviour
 {
+    [SerializeField] private GameObject _backGroundPanel;
     [SerializeField] private MainMenu _mainMenu;
     [SerializeField] private SettingsMenu _settingsMenu;
 
@@ -20,12 +21,23 @@ public class GameMenu : MonoBehaviour
 
     private void Awake()
     {
-        EnsureEventSystem();
         _isGameStarted = false;
-        //Time.timeScale = 0f;
-        //Cursor.lockState = CursorLockMode.None;
-        //Cursor.visible = true;
+        Time.timeScale = 0f;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
        
+    }
+
+    private void Update()
+    {
+        if (_isGameStarted)
+        {
+            _backGroundPanel.SetActive(false);
+        }
+        else
+        {
+            _backGroundPanel.SetActive(true);
+        }
     }
 
     private void Start()
@@ -82,27 +94,18 @@ public class GameMenu : MonoBehaviour
     {
         Time.timeScale = 1f;
         _isGameStarted = true;
-
-        //Cursor.lockState = CursorLockMode.Locked;
-        //Cursor.visible = false;
+       
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
         _currentMenu.Close();
     }
 
     public void PauseToMain()
     {
-        //Time.timeScale = 0f;
+        Time.timeScale = 0f;
         _isGameStarted = false;
-        //Cursor.lockState = CursorLockMode.None;
-        //Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
         OpenMenu(_mainMenu);
-    }
-
-    private void EnsureEventSystem()
-    {
-        if (UnityEngine.Object.FindFirstObjectByType<EventSystem>() != null)
-            return;
-
-        GameObject eventSystem = new GameObject("EventSystem", typeof(EventSystem), typeof(StandaloneInputModule));
-        DontDestroyOnLoad(eventSystem);
     }
 }
