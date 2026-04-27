@@ -175,8 +175,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c7e47076fa5a7b409678f0fce112711, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LaserBeamAbility
+  _damage: 10
+  _damageInterval: 1
+  _playerMask:
+    serializedVersion: 2
+    m_Bits: 8
   _rotationSpeed: 6
-  _damage: 1
   _damageCollider: {fileID: 30057700863728001}
   _laserStartPoint: {fileID: 336112638018332443}
 --- !u!1 &8131917942031430104

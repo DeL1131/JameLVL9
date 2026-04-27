@@ -1,7 +1,8 @@
 using System.Collections;
 using UnityEngine;
+using System;
 
-public class Boss1 : MonoBehaviour
+public class Boss1 : MonoBehaviour, IDamagable
 {
     private const string ScepicalAttackAnimation = "SpecialAttackAnimation";
     private const string LaserChargeAnimation = "SkillAnimationLaser";
@@ -13,6 +14,8 @@ public class Boss1 : MonoBehaviour
     [SerializeField] private LaserBeamAbility _laserPrefab;
     [SerializeField] private Transform _mouthPoint;
 
+    public event Action<float> Damaged;
+
     [Header("Phase Timings")]
     [SerializeField] private float _easyPhaseStartTime = 3f;
     [SerializeField] private float _mediumPhaseStartTime = 20f;
@@ -23,7 +26,7 @@ public class Boss1 : MonoBehaviour
 
     [Header("Laser Attack")]
     [SerializeField] private float _laserFirstStartTime = 10f;
-    [SerializeField] private float _laserRepeatDelay = 8f;
+    [SerializeField] private float _laserRepeatDelay = 8f;  
 
     private Coroutine _bossRoutine;
     private Coroutine _laserRoutine;
@@ -56,6 +59,11 @@ public class Boss1 : MonoBehaviour
             _threatSpawner.StopSpawning();
 
         StopLaser();
+    }
+
+    public void TakeDamage(float damage)
+    {
+        Damaged?.Invoke(damage);
     }
 
     private IEnumerator BossRoutine()

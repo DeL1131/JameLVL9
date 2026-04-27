@@ -1,8 +1,12 @@
+using System;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class Player : MonoBehaviour, IDamagable
 {
     Rigidbody2D rb;
+
+    public event Action<float> Damaged;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -24,5 +28,10 @@ public class Player : MonoBehaviour
         if (rb.linearVelocity.magnitude > maxSpeed)
             rb.linearVelocity = rb.linearVelocity.normalized * maxSpeed;
 
+    }
+
+    public void TakeDamage(float damage)
+    {
+        Damaged?.Invoke(damage);
     }
 }

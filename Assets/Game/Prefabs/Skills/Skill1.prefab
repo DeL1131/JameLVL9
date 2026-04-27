@@ -164,5 +164,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec94dc7c09ea99a48a419554ffb21717, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ThreatOrb
-  _spriteRenderer: {fileID: 1378141171502236505}
+  _damage: 10
   _damageCollider: {fileID: 2722533517826708720}
+  _animator: {fileID: 0}

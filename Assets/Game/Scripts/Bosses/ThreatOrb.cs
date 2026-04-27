@@ -1,15 +1,15 @@
-using System.Collections;
 using UnityEngine;
 
-[RequireComponent(typeof(SpriteRenderer))]
 [RequireComponent(typeof(CircleCollider2D))]
 [RequireComponent(typeof(Animator))]
 public class ThreatOrb : MonoBehaviour
 {
+    [Header("Settings")]
+    [SerializeField] private int _damage = 1;
+
+    [Header("References")]
     [SerializeField] private CircleCollider2D _damageCollider;
     [SerializeField] private Animator _animator;
-
-    private Coroutine _lifeCoroutine;
 
     private void Awake()
     {
@@ -25,33 +25,33 @@ public class ThreatOrb : MonoBehaviour
 
     public void Initialize()
     {
-        if (_lifeCoroutine != null)
-            StopCoroutine(_lifeCoroutine);
-
-        _lifeCoroutine = StartCoroutine(LifeRoutine());
+       
     }
 
-    private IEnumerator LifeRoutine()
+    public void DealDamage()
     {
         _damageCollider.enabled = true;
 
-        yield return null;
+        Collider2D[] hits = Physics2D.OverlapCircleAll(
+            transform.position,
+            _damageCollider.radius * Mathf.Max(transform.lossyScale.x, transform.lossyScale.y)
+        );
 
-        AnimatorStateInfo stateInfo = _animator.GetCurrentAnimatorStateInfo(0);
-        float animationLength = stateInfo.length;
+        foreach (Collider2D hit in hits)
+        {
+            if (hit.TryGetComponent(out IDamagable iDamagale))
+            {
+                Debug.Log($"Игрок получил бы {_damage} урона от ThreatOrb");
+                iDamagale.TakeDamage(_damage);
+            }
+        }
 
-        yield return new WaitForSeconds(animationLength);
-
-        Destroy(gameObject);
+        _damageCollider.enabled = false;
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+
+    public void DestroyOrb()
     {
-        if (other.TryGetComponent(out Player player))
-        {
-            Debug.Log("Игрок получил бы урон от ThreatOrb");
-
-
-        }
+        Destroy(gameObject);
     }
 }
