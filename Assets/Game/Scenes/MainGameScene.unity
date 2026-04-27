@@ -2547,8 +2547,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1240289688}
+  - component: {fileID: 1240289692}
   - component: {fileID: 1240289690}
   - component: {fileID: 1240289689}
+  - component: {fileID: 1240289691}
   m_Layer: 0
   m_Name: GameMaster
   m_TagString: Untagged
@@ -2602,6 +2604,45 @@ MonoBehaviour:
   _endGameScreen: {fileID: 0}
   _parentTransform: {fileID: 0}
   _gameMenu: {fileID: 1240289689}
+--- !u!114 &1240289691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1240289687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: def2def56149b86469804dd5700395c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SceneTransitionInputHandler
+  _gameFlowManager: {fileID: 1240289692}
+  _returnToMainAction: {fileID: 0}
+  _restartAction: {fileID: 0}
+  _miniGame1Action: {fileID: 0}
+  _miniGame2Action: {fileID: 0}
+  _miniGame3Action: {fileID: 0}
+  _miniGame4Action: {fileID: 0}
+  _miniGame5Action: {fileID: 0}
+--- !u!114 &1240289692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1240289687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8f8efc548fed7946b38cd7a5f5135d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameFlowManager
+  _mainGameScene: MainGameScene
+  _miniGameSceneNames:
+  - MiniGame_01
+  - MiniGame_02
+  - MiniGame_03
+  - MiniGame_04
+  - MiniGame_05
 --- !u!1 &1264176834
 GameObject:
   m_ObjectHideFlags: 0

@@ -30,14 +30,14 @@ public class GameMenu : MonoBehaviour
 
     private void Update()
     {
-        if (_isGameStarted)
-        {
-            _backGroundPanel.SetActive(false);
-        }
-        else
-        {
-            _backGroundPanel.SetActive(true);
-        }
+        //if (_isGameStarted)
+        //{
+        //    _backGroundPanel.SetActive(false);
+        //}
+        //else
+        //{
+        //    _backGroundPanel.SetActive(true);
+        //}
     }
 
     private void Start()
