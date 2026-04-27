@@ -2549,7 +2549,6 @@ GameObject:
   - component: {fileID: 1240289688}
   - component: {fileID: 1240289692}
   - component: {fileID: 1240289690}
-  - component: {fileID: 1240289689}
   - component: {fileID: 1240289691}
   m_Layer: 0
   m_Name: GameMaster
@@ -2573,21 +2572,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1240289689
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1240289687}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5aac152c679bae94d9a6dd390569ee7b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GameMenu
-  _backGroundPanel: {fileID: 160154754}
-  _mainMenu: {fileID: 597314081}
-  _settingsMenu: {fileID: 809146484}
 --- !u!114 &1240289690
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2603,7 +2587,7 @@ MonoBehaviour:
   _gameMusic: {fileID: 1225014254}
   _endGameScreen: {fileID: 0}
   _parentTransform: {fileID: 0}
-  _gameMenu: {fileID: 1240289689}
+  _gameMenu: {fileID: 0}
 --- !u!114 &1240289691
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3138,6 +3122,7 @@ GameObject:
   - component: {fileID: 1572245140}
   - component: {fileID: 1572245139}
   - component: {fileID: 1572245138}
+  - component: {fileID: 1572245142}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -3230,6 +3215,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1572245142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1572245137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5aac152c679bae94d9a6dd390569ee7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameMenu
+  _backGroundPanel: {fileID: 160154754}
+  _mainMenu: {fileID: 597314081}
+  _settingsMenu: {fileID: 809146484}
 --- !u!1 &1588752141
 GameObject:
   m_ObjectHideFlags: 0

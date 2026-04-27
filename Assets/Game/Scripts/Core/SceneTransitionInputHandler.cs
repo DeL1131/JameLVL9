@@ -172,7 +172,7 @@ public class SceneTransitionInputHandler : MonoBehaviour
         if (_returnToMainAction == null)
         {
             _runtimeReturnToRitualAction = new InputAction("ReturnToRitual", InputActionType.Button);
-            _runtimeReturnToRitualAction.AddBinding("<Keyboard>/escape");
+            _runtimeReturnToRitualAction.AddBinding("<Keyboard>/tab");
             _runtimeReturnToRitualAction.AddBinding("<Gamepad>/start");
             _runtimeReturnToRitualAction.AddBinding("<Gamepad>/select");
         }
