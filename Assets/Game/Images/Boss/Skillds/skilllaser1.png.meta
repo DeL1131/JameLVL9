@@ -1,19 +1,46 @@
 fileFormatVersion: 2
-guid: 48d248272d4e52347b42fa7cebc26878
+guid: 885119ed145b68f45b2063311d1a6bed
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2931411406855293533
-    second: "ChatGPT Image 27 \u0430\u043F\u0440. 2026 \u0433., 14_07_04_0"
+      213: 8631614123723423460
+    second: skilllaser1_0
   - first:
-      213: -315104823231001906
-    second: "ChatGPT Image 27 \u0430\u043F\u0440. 2026 \u0433., 14_07_04_1"
+      213: 5543584020096415268
+    second: skilllaser1_1
   - first:
-      213: 5233851364045455809
-    second: "ChatGPT Image 27 \u0430\u043F\u0440. 2026 \u0433., 14_07_04_2"
+      213: 4414015635455996837
+    second: skilllaser1_2
   - first:
-      213: 7376970965938054580
-    second: "ChatGPT Image 27 \u0430\u043F\u0440. 2026 \u0433., 14_07_04_3"
+      213: 4575382285189004262
+    second: skilllaser1_3
+  - first:
+      213: 883255724263101174
+    second: skilllaser1_4
+  - first:
+      213: -6506093973508197291
+    second: skilllaser1_5
+  - first:
+      213: 8485754679844110205
+    second: skilllaser1_6
+  - first:
+      213: -581701766959556727
+    second: skilllaser1_7
+  - first:
+      213: -6058497298638816008
+    second: skilllaser1_8
+  - first:
+      213: -2392015520465068556
+    second: skilllaser1_9
+  - first:
+      213: 5792070417486056608
+    second: skilllaser1_10
+  - first:
+      213: -2281741640781269971
+    second: skilllaser1_11
+  - first:
+      213: 1182724019994295838
+    second: skilllaser1_12
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -109,89 +136,111 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "ChatGPT Image 27 \u0430\u043F\u0440. 2026 \u0433., 14_07_04_0"
+      name: skilllaser1_0
       rect:
         serializedVersion: 2
-        x: 11
-        y: 229
-        width: 374
-        height: 603
+        x: 56
+        y: 42
+        width: 87
+        height: 746
       alignment: 9
-      pivot: {x: 0.49895155, y: 0.3996825}
+      pivot: {x: 0.4607043, y: 0.5000113}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3a5bcd35bd88157d0800000000000000
-      internalID: -2931411406855293533
+      spriteID: 4ee77c23057a9c770800000000000000
+      internalID: 8631614123723423460
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "ChatGPT Image 27 \u0430\u043F\u0440. 2026 \u0433., 14_07_04_1"
+      name: skilllaser1_1
       rect:
         serializedVersion: 2
-        x: 394
-        y: 231
-        width: 374
-        height: 603
+        x: 242
+        y: 38
+        width: 75
+        height: 750
       alignment: 9
-      pivot: {x: 0.44450632, y: 0.41057017}
+      pivot: {x: 0.4799886, y: 0.49921137}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ecacd4035d580abf0800000000000000
-      internalID: -315104823231001906
+      spriteID: 426f06c8b44ceec40800000000000000
+      internalID: 5543584020096415268
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "ChatGPT Image 27 \u0430\u043F\u0440. 2026 \u0433., 14_07_04_2"
+      name: skilllaser1_2
       rect:
         serializedVersion: 2
-        x: 1157
-        y: 230
-        width: 363
-        height: 603
+        x: 411
+        y: 37
+        width: 74
+        height: 746
       alignment: 9
-      pivot: {x: 0.43366134, y: 0.41384795}
+      pivot: {x: 0.51801485, y: 0.5023782}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1c18f11e51062a840800000000000000
-      internalID: 5233851364045455809
+      spriteID: 5a3ff5085dbb14d30800000000000000
+      internalID: 4414015635455996837
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "ChatGPT Image 27 \u0430\u043F\u0440. 2026 \u0433., 14_07_04_3"
+      name: skilllaser1_3
       rect:
         serializedVersion: 2
-        x: 778
-        y: 231
-        width: 374
-        height: 603
+        x: 584
+        y: 36
+        width: 72
+        height: 747
       alignment: 9
-      pivot: {x: 0.46997836, y: 0.41772288}
+      pivot: {x: 0.50593823, y: 0.4987362}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4b5ab173204406660800000000000000
-      internalID: 7376970965938054580
+      spriteID: 6eb3e4c62f50f7f30800000000000000
+      internalID: 4575382285189004262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skilllaser1_4
+      rect:
+        serializedVersion: 2
+        x: 748
+        y: 43
+        width: 79
+        height: 739
+      alignment: 9
+      pivot: {x: 0.5455299, y: 0.49361306}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f2588ac664f14c00800000000000000
+      internalID: 883255724263101174
       vertices: []
       indices: 
       edges: []
@@ -200,7 +249,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 1746e1e88a459a04ea8bd442d112bc13
+    spriteID: e7ccbac8f72a59b40836439eeca010a6
     internalID: 0
     vertices: []
     indices: 
@@ -210,10 +259,19 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      "ChatGPT Image 27 \u0430\u043F\u0440. 2026 \u0433., 14_07_04_0": -2931411406855293533
-      "ChatGPT Image 27 \u0430\u043F\u0440. 2026 \u0433., 14_07_04_1": -315104823231001906
-      "ChatGPT Image 27 \u0430\u043F\u0440. 2026 \u0433., 14_07_04_2": 5233851364045455809
-      "ChatGPT Image 27 \u0430\u043F\u0440. 2026 \u0433., 14_07_04_3": 7376970965938054580
+      skilllaser1_0: 8631614123723423460
+      skilllaser1_1: 5543584020096415268
+      skilllaser1_10: 5792070417486056608
+      skilllaser1_11: -2281741640781269971
+      skilllaser1_12: 1182724019994295838
+      skilllaser1_2: 4414015635455996837
+      skilllaser1_3: 4575382285189004262
+      skilllaser1_4: 883255724263101174
+      skilllaser1_5: -6506093973508197291
+      skilllaser1_6: 8485754679844110205
+      skilllaser1_7: -581701766959556727
+      skilllaser1_8: -6058497298638816008
+      skilllaser1_9: -2392015520465068556
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

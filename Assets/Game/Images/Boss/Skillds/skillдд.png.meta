@@ -1,0 +1,799 @@
+fileFormatVersion: 2
+guid: b87815884d29ae846b08ae5ee716421f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7365089157632862836
+    second: "skill\u0434\u0434_0"
+  - first:
+      213: -6398448115200466963
+    second: "skill\u0434\u0434_1"
+  - first:
+      213: -8111891747177341169
+    second: "skill\u0434\u0434_2"
+  - first:
+      213: 6409524154083863210
+    second: "skill\u0434\u0434_3"
+  - first:
+      213: -4606305905991105281
+    second: "skill\u0434\u0434_4"
+  - first:
+      213: -5491268287371686225
+    second: "skill\u0434\u0434_5"
+  - first:
+      213: 2052902588030091447
+    second: "skill\u0434\u0434_6"
+  - first:
+      213: 3128204683555509113
+    second: "skill\u0434\u0434_7"
+  - first:
+      213: -3624128403422329296
+    second: "skill\u0434\u0434_8"
+  - first:
+      213: -3358573890461546856
+    second: "skill\u0434\u0434_9"
+  - first:
+      213: 8859396700458130215
+    second: "skill\u0434\u0434_10"
+  - first:
+      213: -6670252251258751818
+    second: "skill\u0434\u0434_11"
+  - first:
+      213: -6550474845074878670
+    second: "skill\u0434\u0434_12"
+  - first:
+      213: -4637144958126871771
+    second: "skill\u0434\u0434_13"
+  - first:
+      213: -3314918394305030966
+    second: "skill\u0434\u0434_14"
+  - first:
+      213: 5260015962513172233
+    second: "skill\u0434\u0434_15"
+  - first:
+      213: 7123985884653623947
+    second: "skill\u0434\u0434_16"
+  - first:
+      213: -8962646706743431068
+    second: "skill\u0434\u0434_17"
+  - first:
+      213: -2827681601888019810
+    second: "skill\u0434\u0434_18"
+  - first:
+      213: 5525164316888648251
+    second: "skill\u0434\u0434_19"
+  - first:
+      213: 8024627782791620314
+    second: "skill\u0434\u0434_20"
+  - first:
+      213: -8786286582812990062
+    second: "skill\u0434\u0434_21"
+  - first:
+      213: 3704126051911892986
+    second: "skill\u0434\u0434_22"
+  - first:
+      213: 6353921220346728773
+    second: "skill\u0434\u0434_23"
+  - first:
+      213: 7609904074261813311
+    second: "skill\u0434\u0434_24"
+  - first:
+      213: 6977069882070586451
+    second: "skill\u0434\u0434_25"
+  - first:
+      213: 1589757298041517297
+    second: "skill\u0434\u0434_26"
+  - first:
+      213: -1313356559556406558
+    second: "skill\u0434\u0434_27"
+  - first:
+      213: 8727850019017475100
+    second: "skill\u0434\u0434_28"
+  - first:
+      213: -592699878000461108
+    second: "skill\u0434\u0434_29"
+  - first:
+      213: 7908751860205635689
+    second: "skill\u0434\u0434_30"
+  - first:
+      213: 3216395889204330758
+    second: "skill\u0434\u0434_31"
+  - first:
+      213: -7160139076592581954
+    second: "skill\u0434\u0434_32"
+  - first:
+      213: 6191330570899093730
+    second: "skill\u0434\u0434_33"
+  - first:
+      213: -1011896223422015278
+    second: "skill\u0434\u0434_34"
+  - first:
+      213: -7292267336825071782
+    second: "skill\u0434\u0434_35"
+  - first:
+      213: -2681952059379248200
+    second: "skill\u0434\u0434_36"
+  - first:
+      213: -4349012565738425924
+    second: "skill\u0434\u0434_37"
+  - first:
+      213: -2448344196389545254
+    second: "skill\u0434\u0434_38"
+  - first:
+      213: -8862844218073522543
+    second: "skill\u0434\u0434_39"
+  - first:
+      213: 633901914401573772
+    second: "skill\u0434\u0434_40"
+  - first:
+      213: -594860396216305123
+    second: "skill\u0434\u0434_41"
+  - first:
+      213: -6875654865285837712
+    second: "skill\u0434\u0434_42"
+  - first:
+      213: 8106583559867522693
+    second: "skill\u0434\u0434_43"
+  - first:
+      213: -6740496659152931635
+    second: "skill\u0434\u0434_44"
+  - first:
+      213: -7062089659021875561
+    second: "skill\u0434\u0434_45"
+  - first:
+      213: -5555813155494493593
+    second: "skill\u0434\u0434_46"
+  - first:
+      213: 8535119294216909872
+    second: "skill\u0434\u0434_47"
+  - first:
+      213: -842004843806769079
+    second: "skill\u0434\u0434_48"
+  - first:
+      213: 7032994783244134656
+    second: "skill\u0434\u0434_49"
+  - first:
+      213: -4701776904030993932
+    second: "skill\u0434\u0434_50"
+  - first:
+      213: -4180577750605648922
+    second: "skill\u0434\u0434_51"
+  - first:
+      213: -8958097188244578034
+    second: "skill\u0434\u0434_52"
+  - first:
+      213: 7516607705207251718
+    second: "skill\u0434\u0434_53"
+  - first:
+      213: 1853372784862775466
+    second: "skill\u0434\u0434_54"
+  - first:
+      213: 6062529447166414704
+    second: "skill\u0434\u0434_55"
+  - first:
+      213: -6291414396649075766
+    second: "skill\u0434\u0434_56"
+  - first:
+      213: 7729378054163592589
+    second: "skill\u0434\u0434_57"
+  - first:
+      213: 6417152761039256504
+    second: "skill\u0434\u0434_58"
+  - first:
+      213: 6942252403443862218
+    second: "skill\u0434\u0434_59"
+  - first:
+      213: -1901856842214294970
+    second: "skill\u0434\u0434_60"
+  - first:
+      213: -3012358364484935349
+    second: "skill\u0434\u0434_61"
+  - first:
+      213: -8353635203922264505
+    second: "skill\u0434\u0434_62"
+  - first:
+      213: -5750746206318281842
+    second: "skill\u0434\u0434_63"
+  - first:
+      213: 338782814747398199
+    second: "skill\u0434\u0434_64"
+  - first:
+      213: 1003417583372445592
+    second: "skill\u0434\u0434_65"
+  - first:
+      213: -3121550562740541351
+    second: "skill\u0434\u0434_66"
+  - first:
+      213: -2440383530019877849
+    second: "skill\u0434\u0434_67"
+  - first:
+      213: -7546044162802876968
+    second: "skill\u0434\u0434_68"
+  - first:
+      213: -3628579935403220066
+    second: "skill\u0434\u0434_69"
+  - first:
+      213: 6905433413004422222
+    second: "skill\u0434\u0434_70"
+  - first:
+      213: -5560825878105782095
+    second: "skill\u0434\u0434_71"
+  - first:
+      213: -4270144596371495839
+    second: "skill\u0434\u0434_72"
+  - first:
+      213: -3180720308801429739
+    second: "skill\u0434\u0434_73"
+  - first:
+      213: -5161980716444962255
+    second: "skill\u0434\u0434_74"
+  - first:
+      213: -2900417704994248373
+    second: "skill\u0434\u0434_75"
+  - first:
+      213: 2886573039341318132
+    second: "skill\u0434\u0434_76"
+  - first:
+      213: -5020570532885162095
+    second: "skill\u0434\u0434_77"
+  - first:
+      213: -6825149309779545795
+    second: "skill\u0434\u0434_78"
+  - first:
+      213: -3109279823227197502
+    second: "skill\u0434\u0434_79"
+  - first:
+      213: 8804673801196559862
+    second: "skill\u0434\u0434_80"
+  - first:
+      213: -6482607079500854226
+    second: "skill\u0434\u0434_81"
+  - first:
+      213: -1905389946363387585
+    second: "skill\u0434\u0434_82"
+  - first:
+      213: 6132502950043142644
+    second: "skill\u0434\u0434_83"
+  - first:
+      213: -3641459993548770248
+    second: "skill\u0434\u0434_84"
+  - first:
+      213: -3499212583031542623
+    second: "skill\u0434\u0434_85"
+  - first:
+      213: 5275372569379324288
+    second: "skill\u0434\u0434_86"
+  - first:
+      213: -3223867565102895256
+    second: "skill\u0434\u0434_87"
+  - first:
+      213: -8882126121137472897
+    second: "skill\u0434\u0434_88"
+  - first:
+      213: -3747048933497321673
+    second: "skill\u0434\u0434_89"
+  - first:
+      213: -6986785629339765002
+    second: "skill\u0434\u0434_90"
+  - first:
+      213: 6041895816375151479
+    second: "skill\u0434\u0434_91"
+  - first:
+      213: 2361117421451353424
+    second: "skill\u0434\u0434_92"
+  - first:
+      213: 1633560504700473386
+    second: "skill\u0434\u0434_93"
+  - first:
+      213: 2996997313259626688
+    second: "skill\u0434\u0434_94"
+  - first:
+      213: -4231045343049625564
+    second: "skill\u0434\u0434_95"
+  - first:
+      213: -9104259052398455454
+    second: "skill\u0434\u0434_96"
+  - first:
+      213: 5653059412173194067
+    second: "skill\u0434\u0434_97"
+  - first:
+      213: 5561917001808934919
+    second: "skill\u0434\u0434_98"
+  - first:
+      213: 1310340139139173894
+    second: "skill\u0434\u0434_99"
+  - first:
+      213: 7764370969210932366
+    second: "skill\u0434\u0434_100"
+  - first:
+      213: -6379223260790167642
+    second: "skill\u0434\u0434_101"
+  - first:
+      213: 2089121057990367133
+    second: "skill\u0434\u0434_102"
+  - first:
+      213: -8797314655204356358
+    second: "skill\u0434\u0434_103"
+  - first:
+      213: 7927564021243562697
+    second: "skill\u0434\u0434_104"
+  - first:
+      213: 6023360894402955185
+    second: "skill\u0434\u0434_105"
+  - first:
+      213: 2085682049415599872
+    second: "skill\u0434\u0434_106"
+  - first:
+      213: 1763759987799553272
+    second: "skill\u0434\u0434_107"
+  - first:
+      213: 5889841170414046027
+    second: "skill\u0434\u0434_108"
+  - first:
+      213: -8148464157559479589
+    second: "skill\u0434\u0434_109"
+  - first:
+      213: -6700073272413181835
+    second: "skill\u0434\u0434_110"
+  - first:
+      213: -7902254643626705546
+    second: "skill\u0434\u0434_111"
+  - first:
+      213: -4956582799152677339
+    second: "skill\u0434\u0434_112"
+  - first:
+      213: 3558347758591776598
+    second: "skill\u0434\u0434_113"
+  - first:
+      213: -3142949971676528789
+    second: "skill\u0434\u0434_114"
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: "skill\u0434\u0434_0"
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 392
+        width: 267
+        height: 278
+      alignment: 9
+      pivot: {x: 0.5205141, y: 0.5039769}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47aa9c3219d063660800000000000000
+      internalID: 7365089157632862836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "skill\u0434\u0434_17"
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 395
+        width: 267
+        height: 278
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4ec98c94dc60dd44ba505c1d39f15f9
+      internalID: -8962646706743431068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "skill\u0434\u0434_18"
+      rect:
+        serializedVersion: 2
+        x: 631
+        y: 395
+        width: 267
+        height: 278
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6622f95c6e3b5644a281a5910cd0701
+      internalID: -2827681601888019810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "skill\u0434\u0434_19"
+      rect:
+        serializedVersion: 2
+        x: 915
+        y: 396
+        width: 267
+        height: 278
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5d44be6c83939743b4bc3b575e3f805
+      internalID: 5525164316888648251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "skill\u0434\u0434_20"
+      rect:
+        serializedVersion: 2
+        x: 1220
+        y: 396
+        width: 267
+        height: 278
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fda522ce331fac549a3a5dca45862f22
+      internalID: 8024627782791620314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "skill\u0434\u0434_21"
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 22
+        width: 267
+        height: 278
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8663b3c48a884a74d9d938fb2169bda8
+      internalID: -8786286582812990062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "skill\u0434\u0434_22"
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 18
+        width: 267
+        height: 278
+      alignment: 9
+      pivot: {x: 0.50388753, y: 0.51493526}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6417a12b09cf4544a22cff0488fe6bc
+      internalID: 3704126051911892986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "skill\u0434\u0434_32"
+      rect:
+        serializedVersion: 2
+        x: 599
+        y: 17
+        width: 267
+        height: 278
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: edfcec3fe5c889744b3ec1ba01d49ca3
+      internalID: -7160139076592581954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "skill\u0434\u0434_33"
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 15
+        width: 267
+        height: 278
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f2d709c0399b4f46a4d77f51bbaf5bb
+      internalID: 6191330570899093730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "skill\u0434\u0434_34"
+      rect:
+        serializedVersion: 2
+        x: 1199
+        y: 16
+        width: 267
+        height: 278
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f0e58c1b6d9e79479f0641db52dd332
+      internalID: -1011896223422015278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 99c19742c4377da47bdedbd17000eb17
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      "skill\u0434\u0434_0": 7365089157632862836
+      "skill\u0434\u0434_1": -6398448115200466963
+      "skill\u0434\u0434_10": 8859396700458130215
+      "skill\u0434\u0434_100": 7764370969210932366
+      "skill\u0434\u0434_101": -6379223260790167642
+      "skill\u0434\u0434_102": 2089121057990367133
+      "skill\u0434\u0434_103": -8797314655204356358
+      "skill\u0434\u0434_104": 7927564021243562697
+      "skill\u0434\u0434_105": 6023360894402955185
+      "skill\u0434\u0434_106": 2085682049415599872
+      "skill\u0434\u0434_107": 1763759987799553272
+      "skill\u0434\u0434_108": 5889841170414046027
+      "skill\u0434\u0434_109": -8148464157559479589
+      "skill\u0434\u0434_11": -6670252251258751818
+      "skill\u0434\u0434_110": -6700073272413181835
+      "skill\u0434\u0434_111": -7902254643626705546
+      "skill\u0434\u0434_112": -4956582799152677339
+      "skill\u0434\u0434_113": 3558347758591776598
+      "skill\u0434\u0434_114": -3142949971676528789
+      "skill\u0434\u0434_12": -6550474845074878670
+      "skill\u0434\u0434_13": -4637144958126871771
+      "skill\u0434\u0434_14": -3314918394305030966
+      "skill\u0434\u0434_15": 5260015962513172233
+      "skill\u0434\u0434_16": 7123985884653623947
+      "skill\u0434\u0434_17": -8962646706743431068
+      "skill\u0434\u0434_18": -2827681601888019810
+      "skill\u0434\u0434_19": 5525164316888648251
+      "skill\u0434\u0434_2": -8111891747177341169
+      "skill\u0434\u0434_20": 8024627782791620314
+      "skill\u0434\u0434_21": -8786286582812990062
+      "skill\u0434\u0434_22": 3704126051911892986
+      "skill\u0434\u0434_23": 6353921220346728773
+      "skill\u0434\u0434_24": 7609904074261813311
+      "skill\u0434\u0434_25": 6977069882070586451
+      "skill\u0434\u0434_26": 1589757298041517297
+      "skill\u0434\u0434_27": -1313356559556406558
+      "skill\u0434\u0434_28": 8727850019017475100
+      "skill\u0434\u0434_29": -592699878000461108
+      "skill\u0434\u0434_3": 6409524154083863210
+      "skill\u0434\u0434_30": 7908751860205635689
+      "skill\u0434\u0434_31": 3216395889204330758
+      "skill\u0434\u0434_32": -7160139076592581954
+      "skill\u0434\u0434_33": 6191330570899093730
+      "skill\u0434\u0434_34": -1011896223422015278
+      "skill\u0434\u0434_35": -7292267336825071782
+      "skill\u0434\u0434_36": -2681952059379248200
+      "skill\u0434\u0434_37": -4349012565738425924
+      "skill\u0434\u0434_38": -2448344196389545254
+      "skill\u0434\u0434_39": -8862844218073522543
+      "skill\u0434\u0434_4": -4606305905991105281
+      "skill\u0434\u0434_40": 633901914401573772
+      "skill\u0434\u0434_41": -594860396216305123
+      "skill\u0434\u0434_42": -6875654865285837712
+      "skill\u0434\u0434_43": 8106583559867522693
+      "skill\u0434\u0434_44": -6740496659152931635
+      "skill\u0434\u0434_45": -7062089659021875561
+      "skill\u0434\u0434_46": -5555813155494493593
+      "skill\u0434\u0434_47": 8535119294216909872
+      "skill\u0434\u0434_48": -842004843806769079
+      "skill\u0434\u0434_49": 7032994783244134656
+      "skill\u0434\u0434_5": -5491268287371686225
+      "skill\u0434\u0434_50": -4701776904030993932
+      "skill\u0434\u0434_51": -4180577750605648922
+      "skill\u0434\u0434_52": -8958097188244578034
+      "skill\u0434\u0434_53": 7516607705207251718
+      "skill\u0434\u0434_54": 1853372784862775466
+      "skill\u0434\u0434_55": 6062529447166414704
+      "skill\u0434\u0434_56": -6291414396649075766
+      "skill\u0434\u0434_57": 7729378054163592589
+      "skill\u0434\u0434_58": 6417152761039256504
+      "skill\u0434\u0434_59": 6942252403443862218
+      "skill\u0434\u0434_6": 2052902588030091447
+      "skill\u0434\u0434_60": -1901856842214294970
+      "skill\u0434\u0434_61": -3012358364484935349
+      "skill\u0434\u0434_62": -8353635203922264505
+      "skill\u0434\u0434_63": -5750746206318281842
+      "skill\u0434\u0434_64": 338782814747398199
+      "skill\u0434\u0434_65": 1003417583372445592
+      "skill\u0434\u0434_66": -3121550562740541351
+      "skill\u0434\u0434_67": -2440383530019877849
+      "skill\u0434\u0434_68": -7546044162802876968
+      "skill\u0434\u0434_69": -3628579935403220066
+      "skill\u0434\u0434_7": 3128204683555509113
+      "skill\u0434\u0434_70": 6905433413004422222
+      "skill\u0434\u0434_71": -5560825878105782095
+      "skill\u0434\u0434_72": -4270144596371495839
+      "skill\u0434\u0434_73": -3180720308801429739
+      "skill\u0434\u0434_74": -5161980716444962255
+      "skill\u0434\u0434_75": -2900417704994248373
+      "skill\u0434\u0434_76": 2886573039341318132
+      "skill\u0434\u0434_77": -5020570532885162095
+      "skill\u0434\u0434_78": -6825149309779545795
+      "skill\u0434\u0434_79": -3109279823227197502
+      "skill\u0434\u0434_8": -3624128403422329296
+      "skill\u0434\u0434_80": 8804673801196559862
+      "skill\u0434\u0434_81": -6482607079500854226
+      "skill\u0434\u0434_82": -1905389946363387585
+      "skill\u0434\u0434_83": 6132502950043142644
+      "skill\u0434\u0434_84": -3641459993548770248
+      "skill\u0434\u0434_85": -3499212583031542623
+      "skill\u0434\u0434_86": 5275372569379324288
+      "skill\u0434\u0434_87": -3223867565102895256
+      "skill\u0434\u0434_88": -8882126121137472897
+      "skill\u0434\u0434_89": -3747048933497321673
+      "skill\u0434\u0434_9": -3358573890461546856
+      "skill\u0434\u0434_90": -6986785629339765002
+      "skill\u0434\u0434_91": 6041895816375151479
+      "skill\u0434\u0434_92": 2361117421451353424
+      "skill\u0434\u0434_93": 1633560504700473386
+      "skill\u0434\u0434_94": 2996997313259626688
+      "skill\u0434\u0434_95": -4231045343049625564
+      "skill\u0434\u0434_96": -9104259052398455454
+      "skill\u0434\u0434_97": 5653059412173194067
+      "skill\u0434\u0434_98": 5561917001808934919
+      "skill\u0434\u0434_99": 1310340139139173894
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -4,20 +4,30 @@ using UnityEngine;
 public class Boss1 : MonoBehaviour
 {
     private const string ScepicalAttackAnimation = "SpecialAttackAnimation";
+    private const string LaserChargeAnimation = "SkillAnimationLaser";
+    private const string IsLaserActiveParam = "IsLaserAbilityActive";
 
     [Header("References")]
     [SerializeField] private Animator _animator;
     [SerializeField] private ThreatSpawner _threatSpawner;
+    [SerializeField] private LaserBeamAbility _laserPrefab;
+    [SerializeField] private Transform _mouthPoint;
 
     [Header("Phase Timings")]
     [SerializeField] private float _easyPhaseStartTime = 3f;
     [SerializeField] private float _mediumPhaseStartTime = 20f;
     [SerializeField] private float _hardPhaseStartTime = 40f;
 
-    [Header("Attack")]
+    [Header("Orb Attack")]
     [SerializeField] private float _spawnDelayAfterAnimationStart = 0.5f;
 
+    [Header("Laser Attack")]
+    [SerializeField] private float _laserFirstStartTime = 10f;
+    [SerializeField] private float _laserRepeatDelay = 8f;
+
     private Coroutine _bossRoutine;
+    private Coroutine _laserRoutine;
+    private LaserBeamAbility _currentLaser;
 
     private void Awake()
     {
@@ -31,6 +41,7 @@ public class Boss1 : MonoBehaviour
     private void OnEnable()
     {
         _bossRoutine = StartCoroutine(BossRoutine());
+        _laserRoutine = StartCoroutine(LaserLoopRoutine());
     }
 
     private void OnDisable()
@@ -38,8 +49,13 @@ public class Boss1 : MonoBehaviour
         if (_bossRoutine != null)
             StopCoroutine(_bossRoutine);
 
+        if (_laserRoutine != null)
+            StopCoroutine(_laserRoutine);
+
         if (_threatSpawner != null)
             _threatSpawner.StopSpawning();
+
+        StopLaser();
     }
 
     private IEnumerator BossRoutine()
@@ -54,6 +70,26 @@ public class Boss1 : MonoBehaviour
         StartOrbPhase(ThreatSpawner.DifficultyMode.Hard);
     }
 
+    private IEnumerator LaserLoopRoutine()
+    {
+        yield return WaitUntilTime(_laserFirstStartTime);
+
+        while (true)
+        {
+            StartLaserAttack();
+
+            yield return new WaitForSeconds(_laserRepeatDelay);
+        }
+    }
+
+    private void StartLaserAttack()
+    {
+        if (_laserPrefab == null || _mouthPoint == null)
+            return;
+
+        PlayAnimation(LaserChargeAnimation);
+    }
+
     private void StartOrbPhase(ThreatSpawner.DifficultyMode difficultyMode)
     {
         StartCoroutine(StartOrbPhaseRoutine(difficultyMode));
@@ -61,31 +97,61 @@ public class Boss1 : MonoBehaviour
 
     private IEnumerator StartOrbPhaseRoutine(ThreatSpawner.DifficultyMode difficultyMode)
     {
-        PlayAttackAnimation();
+        PlayAnimation(ScepicalAttackAnimation);
 
         yield return new WaitForSeconds(_spawnDelayAfterAnimationStart);
 
         if (_threatSpawner == null)
-        {
-            Debug.LogWarning($"{nameof(Boss1)} has no ThreatSpawner assigned.", this);
             yield break;
-        }
 
         _threatSpawner.SetDifficulty(difficultyMode);
         _threatSpawner.StartSpawning();
-
-        Debug.Log($"Boss1 started orb phase: {difficultyMode}");
     }
 
-    private void PlayAttackAnimation()
+    public void OnLaserFire()
+    {
+        if (_laserPrefab == null || _mouthPoint == null)
+            return;
+
+        if (_animator != null)
+            _animator.SetBool(IsLaserActiveParam, true);
+
+        if (_currentLaser != null)
+            Destroy(_currentLaser.gameObject);
+
+        _currentLaser = Instantiate(
+            _laserPrefab,
+            _mouthPoint.position,
+            _mouthPoint.rotation
+        );
+
+        _currentLaser.Activate(_mouthPoint);
+    }
+
+    public void OnLaserEnd()
+    {
+        StopLaser();
+    }
+
+    private void StopLaser()
+    {
+        if (_animator != null)
+            _animator.SetBool(IsLaserActiveParam, false);
+
+        if (_currentLaser != null)
+        {
+            _currentLaser.Deactivate();
+            Destroy(_currentLaser.gameObject);
+            _currentLaser = null;
+        }
+    }
+
+    private void PlayAnimation(string animationName)
     {
         if (_animator == null)
-        {
-            Debug.LogWarning($"{nameof(Boss1)} has no Animator assigned.", this);
             return;
-        }
 
-        _animator.Play(ScepicalAttackAnimation);
+        _animator.Play(animationName, 0, 0f);
     }
 
     private IEnumerator WaitUntilTime(float targetTime)

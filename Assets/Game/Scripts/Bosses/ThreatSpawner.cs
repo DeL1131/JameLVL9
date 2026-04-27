@@ -95,7 +95,7 @@ public class ThreatSpawner : MonoBehaviour
             Quaternion.identity
         );
 
-        orb.Initialize(GetFadeInDuration());
+        orb.Initialize();
     }
 
     private Vector2 GetRandomPointInRadius()
