@@ -1,13 +1,13 @@
 using System;
 using UnityEngine;
 
-[RequireComponent(typeof(IDamagable))]
+[RequireComponent(typeof(IDamageable))]
 
 public class Health : MonoBehaviour
 {
     [SerializeField] private float _maxHealth;
 
-    private IDamagable _damagable;
+    private IDamageable _damagable;
 
     public event Action<float> HealthChanged;
 
@@ -18,7 +18,7 @@ public class Health : MonoBehaviour
     private void Awake()
     {
         CurrentHealth = _maxHealth;
-        _damagable = GetComponent<IDamagable>();
+        _damagable = GetComponent<IDamageable>();
 
         _damagable.Damaged += DamageHealth;
     }

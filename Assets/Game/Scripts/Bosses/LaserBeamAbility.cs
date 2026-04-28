@@ -42,7 +42,7 @@ public class LaserBeamAbility : MonoBehaviour
         if (((1 << other.gameObject.layer) & _playerMask) == 0)
             return;
 
-        if (other.TryGetComponent(out IDamagable iDamageble) == false)
+        if (other.TryGetComponent(out IDamageable iDamageble) == false)
             return;
 
         _damageTimer -= Time.deltaTime;

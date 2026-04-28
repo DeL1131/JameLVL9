@@ -39,7 +39,7 @@ public class ThreatOrb : MonoBehaviour
 
         foreach (Collider2D hit in hits)
         {
-            if (hit.TryGetComponent(out IDamagable iDamagale))
+            if (hit.TryGetComponent(out IDamageable iDamagale))
             {
                 Debug.Log($"Игрок получил бы {_damage} урона от ThreatOrb");
                 iDamagale.TakeDamage(_damage);

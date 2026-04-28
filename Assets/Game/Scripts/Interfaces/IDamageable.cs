@@ -1,6 +1,6 @@
 using System;
 
-public interface IDamagable
+public interface IDamageable
 {
     public event Action<float> Damaged;
     public void TakeDamage(float damage);    

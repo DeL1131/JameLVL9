@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 using System;
 
-public class Boss1 : MonoBehaviour, IDamagable
+public class Boss1 : MonoBehaviour, IDamageable
 {
     private const string ScepicalAttackAnimation = "SpecialAttackAnimation";
     private const string LaserChargeAnimation = "SkillAnimationLaser";
@@ -63,6 +63,7 @@ public class Boss1 : MonoBehaviour, IDamagable
 
     public void TakeDamage(float damage)
     {
+        Debug.Log($"Босс получил {damage} урона");
         Damaged?.Invoke(damage);
     }
 
