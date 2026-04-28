@@ -1,12 +1,13 @@
-using System;
 using UnityEngine;
 
-public class Player : MonoBehaviour, IDamageable
+public class Player : MonoBehaviour
 {
+    public static Player instance { get; private set; }
+    void Awake()
+    {
+        instance = this;
+    }
     Rigidbody2D rb;
-
-    public event Action<float> Damaged;
-
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -22,16 +23,39 @@ public class Player : MonoBehaviour, IDamageable
 
         rb.AddForce(wasd * acceleration);
 
-        if (wasd == Vector2.zero)
-            rb.AddForce(-rb.linearVelocity.normalized * friction * Time.fixedDeltaTime);
+        if (rb.linearVelocity.magnitude > friction * Time.fixedDeltaTime)
+        {
+            rb.AddForce(-rb.linearVelocity.normalized * friction);
+        }
+        else
+        {
+            rb.linearVelocity = Vector2.zero;
+        }
+
 
         if (rb.linearVelocity.magnitude > maxSpeed)
             rb.linearVelocity = rb.linearVelocity.normalized * maxSpeed;
 
     }
-
-    public void TakeDamage(float damage)
+    void Update()
     {
-        Damaged?.Invoke(damage);
+        DropItem();
+    }
+    public ItemObject carriedItem;
+    public void PickUpItem(ItemObject item)
+    {
+        if (carriedItem != null)
+        {
+            carriedItem.Drop();
+        }
+        carriedItem = item;
+    }
+    private void DropItem()
+    {
+        if (carriedItem != null && Input.GetKeyDown(KeyCode.Q))
+        {
+            carriedItem.Drop();
+            carriedItem = null;
+        }
     }
 }

@@ -88,7 +88,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 17.59375, y: 26.8125}
+  m_Size: {x: 5.63, y: 8.58}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -129,11 +129,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Boss1
   _animator: {fileID: 5763754803749625863}
   _threatSpawner: {fileID: 0}
-  _laserPrefab: {fileID: 0}
-  _mouthPoint: {fileID: 0}
   _easyPhaseStartTime: 3
   _mediumPhaseStartTime: 20
   _hardPhaseStartTime: 40
   _spawnDelayAfterAnimationStart: 0.5
-  _laserFirstStartTime: 10
-  _laserRepeatDelay: 8

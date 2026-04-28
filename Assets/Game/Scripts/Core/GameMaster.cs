@@ -18,17 +18,8 @@ public class GameMaster : MonoBehaviour
 
         if (Keyboard.current != null && Keyboard.current.escapeKey.wasPressedThisFrame)
         {
-            if (_gameMenu == null)
-                return;
-
-            if (_gameMenu.IsPaused)
-            {
-                _gameMenu.ResumeGame();
-            }
-            else
-            {
+            if (_gameMenu != null)
                 _gameMenu.PauseToMain();
-            }
         }
     }
 
@@ -44,6 +35,9 @@ public class GameMaster : MonoBehaviour
             _gameMusic.PlayGameCompleteMusic();
 
         Time.timeScale = 0f;
+
+        //Cursor.lockState = CursorLockMode.None;
+        //Cursor.visible = true;
     }
 
     private void GameOver()

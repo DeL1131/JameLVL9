@@ -1,11 +1,14 @@
 using UnityEngine;
 
 [RequireComponent(typeof(AudioSource))]
+
 public class GameMusic : MonoBehaviour
 {
+    [SerializeField] private AudioClip _clipPhase1;
+    [SerializeField] private AudioClip _clipPhase2;
+    [SerializeField] private AudioClip _clipPhase3;
     [SerializeField] private AudioClip _clipGameOver;
-    [SerializeField] private AudioClip _clipGameComplete;
-    [SerializeField] private AudioClip _clipMiniGameComplete;
+
 
     private AudioSource _audioSource;
 
@@ -14,32 +17,37 @@ public class GameMusic : MonoBehaviour
         _audioSource = GetComponent<AudioSource>();
     }
 
-    public void PlayGameOverMusic()
+    private void OnEnable()
     {
-        PlayClip(_clipGameOver);
+        PlayPhase1Music();
+    }
+
+    private void OnDisable()
+    {
+
+    }
+
+    public void PlayPhase1Music()
+    {
+        _audioSource.clip = _clipPhase1;
+        _audioSource.Play();
+    }
+
+    public void PlayPhase2Music()
+    {
+        _audioSource.clip = _clipPhase2;
+       _audioSource.Play();
     }
 
     public void PlayGameCompleteMusic()
     {
-        PlayClip(_clipGameComplete);
+        _audioSource.clip = _clipPhase3;
+        _audioSource.Play();
     }
 
-    public void PlayMiniGameCompleteMusic()
+    public void PlayGameOverMusic()
     {
-        PlayClip(_clipMiniGameComplete);
-    }
-
-    private void PlayClip(AudioClip clip)
-    {
-        if (clip == null)
-        {
-            Debug.LogWarning("Music clip is missing.");
-            return;
-        }
-
-        _audioSource.Stop();          // выключает текущий фон
-        _audioSource.clip = clip;     // ставит новую музыку
-        _audioSource.loop = false;    // конец игры обычно не лупится
-        _audioSource.Play();          // запускает новую
+        _audioSource.clip = _clipGameOver;
+        _audioSource.Play();
     }
 }

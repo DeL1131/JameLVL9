@@ -60,7 +60,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 200
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -114,10 +114,10 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 216
-        width: 374
-        height: 603
+        width: 330
+        height: 498
       alignment: 9
-      pivot: {x: 0.48821357, y: 0.4431666}
+      pivot: {x: 0.5415854, y: 0.53006166}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -134,12 +134,12 @@ TextureImporter:
       name: "ChatGPT Image 27 \u0430\u043F\u0440. 2026 \u0433., 13_54_10_1"
       rect:
         serializedVersion: 2
-        x: 396
-        y: 215
-        width: 374
-        height: 603
+        x: 395
+        y: 214
+        width: 306
+        height: 500
       alignment: 9
-      pivot: {x: 0.4258728, y: 0.44596764}
+      pivot: {x: 0.53261614, y: 0.53493166}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -158,10 +158,10 @@ TextureImporter:
         serializedVersion: 2
         x: 779
         y: 215
-        width: 374
-        height: 603
+        width: 335
+        height: 538
       alignment: 9
-      pivot: {x: 0.47191992, y: 0.45473343}
+      pivot: {x: 0.51862025, y: 0.50231886}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -179,11 +179,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1167
-        y: 216
-        width: 369
-        height: 603
+        y: 205
+        width: 321
+        height: 601
       alignment: 9
-      pivot: {x: 0.45418394, y: 0.47097287}
+      pivot: {x: 0.5116598, y: 0.4813176}
       border: {x: 1, y: 0, z: 0, w: 0}
       customData: 
       outline: []

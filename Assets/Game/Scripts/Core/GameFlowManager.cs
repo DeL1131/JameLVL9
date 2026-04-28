@@ -45,18 +45,10 @@ public class GameFlowManager : MonoBehaviour
         LoadScene(_miniGameSceneNames[miniGameIndex - 1]);
     }
 
-    public void LoadSceneByName(string sceneName)
-    {
-        LoadScene(sceneName);
-    }
-
     public void ReloadCurrentScene()
     {
         string sceneName = SceneManager.GetActiveScene().name;
-
         Debug.Log($"Reloading scene: {sceneName}");
-
-        Time.timeScale = 1f;
         SceneManager.LoadScene(sceneName);
     }
 
@@ -68,21 +60,7 @@ public class GameFlowManager : MonoBehaviour
 
     private void LoadScene(string sceneName)
     {
-        if (string.IsNullOrWhiteSpace(sceneName))
-        {
-            Debug.LogWarning("Scene name is empty. No scene was loaded.");
-            return;
-        }
-
-        if (Application.CanStreamedLevelBeLoaded(sceneName) == false)
-        {
-            Debug.LogError($"Scene '{sceneName}' was not found in Build Settings. No scene was loaded.");
-            return;
-        }
-
         Debug.Log($"Loading scene: {sceneName}");
-
-        Time.timeScale = 1f;
         SceneManager.LoadScene(sceneName);
     }
 }
