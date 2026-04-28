@@ -8,13 +8,13 @@ public class GameMenu : MonoBehaviour
     [SerializeField] private MainMenu _mainMenu;
     [SerializeField] private SettingsMenu _settingsMenu;
 
+    public bool IsPaused => Time.timeScale == 0f && _isGameStarted;
+
     private Menu _currentMenu;
 
     public Menu MainMenu => _mainMenu;
 
-    private int _easyLevelComplexity = 1;
-    private int _mediumLevelComplexity = 2;
-    private int _hardLevelComplexity = 3;
+
     private bool _isGameStarted;
 
     public event Action<int> OnLevelChange;
@@ -26,18 +26,6 @@ public class GameMenu : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
        
-    }
-
-    private void Update()
-    {
-        //if (_isGameStarted)
-        //{
-        //    _backGroundPanel.SetActive(false);
-        //}
-        //else
-        //{
-        //    _backGroundPanel.SetActive(true);
-        //}
     }
 
     private void Start()
@@ -56,6 +44,8 @@ public class GameMenu : MonoBehaviour
         _mainMenu.OnButtonClicked -= OpenSelectedMenu;
         _settingsMenu.OnButtonClicked -= OpenSelectedMenu;
     }
+
+
 
     public void OpenSelectedMenu(string selectedMenu)
     {
@@ -85,6 +75,7 @@ public class GameMenu : MonoBehaviour
         _currentMenu.Open();
     }
 
+
     private void CloseGame()
     {
         Application.Quit();
@@ -106,6 +97,18 @@ public class GameMenu : MonoBehaviour
         _isGameStarted = false;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
-        OpenMenu(_mainMenu);
+        OpenMenu(_settingsMenu);
+    }
+
+    public void ResumeGame()
+    {
+        Time.timeScale = 1f;
+        _isGameStarted = true;
+
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+
+        if (_currentMenu != null)
+            _currentMenu.Close();
     }
 }

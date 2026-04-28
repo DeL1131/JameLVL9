@@ -18,8 +18,17 @@ public class GameMaster : MonoBehaviour
 
         if (Keyboard.current != null && Keyboard.current.escapeKey.wasPressedThisFrame)
         {
-            if (_gameMenu != null)
+            if (_gameMenu == null)
+                return;
+
+            if (_gameMenu.IsPaused)
+            {
+                _gameMenu.ResumeGame();
+            }
+            else
+            {
                 _gameMenu.PauseToMain();
+            }
         }
     }
 
