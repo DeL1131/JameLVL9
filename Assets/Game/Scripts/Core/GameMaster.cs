@@ -35,9 +35,6 @@ public class GameMaster : MonoBehaviour
             _gameMusic.PlayGameCompleteMusic();
 
         Time.timeScale = 0f;
-
-        //Cursor.lockState = CursorLockMode.None;
-        //Cursor.visible = true;
     }
 
     private void GameOver()

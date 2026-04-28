@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: db1caa14b6e7d714eb7106367c57cf6e
+guid: ccdcc420b6a295a4d85dcc0b90d83e45
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4397551305630482471
-    second: cultistblack3_0
+      213: -8723953380388558127
+    second: "ChatGPT Image 28 \u0430\u043F\u0440. 2026 \u0433., 19_35_43_0"
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: cultistblack3_0
+      name: "ChatGPT Image 28 \u0430\u043F\u0440. 2026 \u0433., 19_35_43_0"
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 16
-        height: 46
+        x: 111
+        y: 88
+        width: 793
+        height: 841
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9dff6520362c8f2c0800000000000000
-      internalID: -4397551305630482471
+      spriteID: 1da2fdc3f9a4ee680800000000000000
+      internalID: -8723953380388558127
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      cultistblack3_0: -4397551305630482471
+      "ChatGPT Image 28 \u0430\u043F\u0440. 2026 \u0433., 19_35_43_0": -8723953380388558127
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class BulletPatternRunner : MonoBehaviour
 {
@@ -23,6 +24,11 @@ public class BulletPatternRunner : MonoBehaviour
 
     private void Awake()
     {
+        if(_target == null)
+        {
+            _target = GameObject.FindGameObjectWithTag("Player").transform;
+        }
+
         if (_spawner == null)
             _spawner = GetComponent<BulletSpawner>();
 
