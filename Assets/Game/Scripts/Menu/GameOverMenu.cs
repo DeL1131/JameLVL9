@@ -4,23 +4,22 @@ using UnityEngine.UI;
 
 public class GameOverMenu : Menu
 {
-    [SerializeField] private Button _buttonRestart;
+    [SerializeField] private Button _buttonCloseGame;
 
     private void OnEnable()
     {
-        if (_buttonRestart != null)
-            _buttonRestart.onClick.AddListener(RestartGame);
+        if (_buttonCloseGame != null)
+            _buttonCloseGame.onClick.AddListener(CloseGame);
     }
 
     private void OnDisable()
     {
-        if (_buttonRestart != null)
-            _buttonRestart.onClick.RemoveListener(RestartGame);
+        if (_buttonCloseGame != null)
+            _buttonCloseGame.onClick.RemoveListener(CloseGame);
     }
 
-    private void RestartGame()
+    private void CloseGame()
     {
-        Time.timeScale = 1f;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Application.Quit();
     }
 }

@@ -5,7 +5,7 @@ public class GameFlowManager : MonoBehaviour
 {
     public static GameFlowManager Instance { get; private set; }
 
-    [SerializeField] private string _mainGameScene = "MainGameScene";
+    [SerializeField] private string _mainGameScene = "RitualScene";
 
     [SerializeField]
     private string[] _miniGameSceneNames =

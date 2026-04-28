@@ -59,12 +59,15 @@ public class RitualConditionsUI : MonoBehaviour
     {
         string result = "Полотно реальности требует пяти аспектов\n";
 
+       
+
         for (int i = 0; i < lines.Length; i++)
         {
             string color = conditions[i] ? "green" : "red";
             result += $"<color={color}>{lines[i]}</color>\n";
         }
-
+         
+        result += "Нажмите Q - Чтобы выбросить предмет \n Нажмите E - Чтобы взаимодействовать с объектом \n WASD - Для передвижения";
         text.text = result;
     }
 

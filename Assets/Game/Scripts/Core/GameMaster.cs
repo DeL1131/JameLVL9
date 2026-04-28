@@ -6,28 +6,45 @@ public class GameMaster : MonoBehaviour
     [SerializeField] private GameMusic _gameMusic;
     [SerializeField] private GameOverMenu _endGameScreen;
     [SerializeField] private Transform _parentTransform;
-    [SerializeField] private GameMenu _gameMenu;
+    [SerializeField] private GameMenuNew _gameMenu;
 
     private bool _isGameOver;
     private GameOverMenu _spawnedEndScreen;
 
     private void Update()
     {
+        if (_gameMenu == null)
+        {
+            Debug.LogWarning("GameMenuNew reference is not set in GameMaster. Attempting to find it in the scene...");
+            var component = FindObjectOfType<GameMenuNew>();
+            _gameMenu = component;
+        }
+
         if (_isGameOver)
             return;
 
         if (Keyboard.current != null && Keyboard.current.escapeKey.wasPressedThisFrame)
         {
+            Debug.Log("Escape key pressed");
             if (_gameMenu == null)
+            {
+                Debug.Log("_gameMenu == null");
                 return;
+
+            }
 
             if (_gameMenu.IsPaused)
             {
+                Debug.Log("_gameMenu.IsPaused");
+
                 _gameMenu.ResumeGame();
+
             }
             else
             {
-                _gameMenu.PauseToMain();
+                Debug.Log("_gameMenu.IsPaused false");             
+                _gameMenu.PauseToSettings();
+
             }
         }
     }
