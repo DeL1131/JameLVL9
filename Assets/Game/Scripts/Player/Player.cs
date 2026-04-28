@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class Player : MonoBehaviour, IDamageable
+public class PlayerOld : MonoBehaviour, IDamageable
 {
     Rigidbody2D rb;
 

@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class DemonObject : InteractableObject
 {
+    [SerializeField] private GameFlowManager _gameFlowManager;
+
     public static DemonObject instance;
     void Awake()
     {
@@ -9,6 +11,6 @@ public class DemonObject : InteractableObject
     }
     protected override void Interact()
     {
-
+        _gameFlowManager.LoadSceneByName("MiniGame_01");
     }
 }
