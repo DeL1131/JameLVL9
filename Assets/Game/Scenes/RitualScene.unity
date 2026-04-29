@@ -19102,7 +19102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player
   maxSpeed: 4
-  acceleration: 400
+  acceleration: 200
   friction: 60
   carriedItem: {fileID: 0}
 --- !u!1001 &7709971306887598183
