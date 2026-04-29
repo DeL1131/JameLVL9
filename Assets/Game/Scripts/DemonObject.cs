@@ -5,6 +5,11 @@ public class DemonObject : InteractableObject
 {
     [SerializeField] private GameFlowManager _gameFlowManager;
 
+    [Header("Boss Start Messages")]
+    [SerializeField] private string _bossSummonedMessage = "Who dares summon me? Pathetic mortal!";
+    [SerializeField] private string _startFightMessage = "E - Start fight";
+    [SerializeField] private bool _showSummonedMessageAlways = true;
+
     [Header("Boss Result Messages")]
     [SerializeField] private string _bossDefeatedMessage = "Ты доказал свою силу.";
     [SerializeField] private string _bossDefeatedInteractionMessage = "Ты доказал свою силу. Нет нужды нам сражаться вновь.";
@@ -23,7 +28,7 @@ public class DemonObject : InteractableObject
     protected override void Start()
     {
         base.Start();
-        RefreshBossResultMessage();
+        RefreshBossMessage();
     }
 
     protected override void Interact()
@@ -52,26 +57,47 @@ public class DemonObject : InteractableObject
     protected override void OnTriggerEnter2D(Collider2D other)
     {
         base.OnTriggerEnter2D(other);
-        RefreshBossResultMessage();
+        RefreshBossMessageForPlayerRange();
     }
 
     protected override void OnTriggerExit2D(Collider2D other)
     {
         base.OnTriggerExit2D(other);
 
-        if (_showBossResultMessageAlways && HasBossResultMessage())
+        RefreshBossMessage();
+    }
+
+    private void RefreshBossMessage()
+    {
+        if (TryRefreshBossResultMessage())
+            return;
+
+        SetInteractionMessage(_bossSummonedMessage);
+
+        if (_showSummonedMessageAlways)
             SetInteractionMessageVisible(true);
     }
 
-    private void RefreshBossResultMessage()
+    private void RefreshBossMessageForPlayerRange()
+    {
+        if (TryRefreshBossResultMessage())
+            return;
+
+        SetInteractionMessage(_startFightMessage);
+        SetInteractionMessageVisible(true);
+    }
+
+    private bool TryRefreshBossResultMessage()
     {
         if (GameSession.Instance == null || GameSession.Instance.HasBossFightResult == false)
-            return;
+            return false;
 
         SetInteractionMessage(GameSession.Instance.HasWonBossFight ? _bossDefeatedMessage : _bossLostMessage);
 
         if (_showBossResultMessageAlways)
             SetInteractionMessageVisible(true);
+
+        return true;
     }
 
     private void ShowTemporaryDefeatedInteractionMessage()
