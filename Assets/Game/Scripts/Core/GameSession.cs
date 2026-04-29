@@ -10,11 +10,13 @@ public class GameSession : MonoBehaviour
     private bool _isGameStarted;
     private bool _hasRitualState;
     private bool _hasSpawnedDemon;
+    private bool _hasBossFightResult;
     private bool _hasWonBossFight;
 
     public bool IsGameStarted => _isGameStarted;
     public bool HasRitualState => _hasRitualState;
     public bool HasSpawnedDemon => _hasSpawnedDemon;
+    public bool HasBossFightResult => _hasBossFightResult;
     public bool HasWonBossFight => _hasWonBossFight;
 
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
@@ -78,6 +80,7 @@ public class GameSession : MonoBehaviour
 
     public void RecordBossFightResult(bool hasWon)
     {
+        _hasBossFightResult = true;
         _hasWonBossFight = hasWon;
 
         if (_logStateChanges)

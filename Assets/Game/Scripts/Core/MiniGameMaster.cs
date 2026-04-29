@@ -48,6 +48,15 @@ public class MiniGameMaster : MonoBehaviour
     {
         //_gameCompleeMenu.Open();
         //_audioSource.Stop();
+        if (GameSession.Instance != null)
+            GameSession.Instance.RecordBossFightResult(true);
+
+        if (GameFlowManager.Instance != null)
+        {
+            GameFlowManager.Instance.LoadRitualScene();
+            return;
+        }
+
         SceneManager.LoadScene("RitualScene");
     }
 
@@ -73,6 +82,15 @@ public class MiniGameMaster : MonoBehaviour
         //_gameOverMenu.Open();
         //_audioSource.Stop();
         //Time.timeScale = 0f;
+        if (GameSession.Instance != null)
+            GameSession.Instance.RecordBossFightResult(false);
+
+        if (GameFlowManager.Instance != null)
+        {
+            GameFlowManager.Instance.LoadRitualScene();
+            return;
+        }
+
         SceneManager.LoadScene("RitualScene");
     }
 }

@@ -5,7 +5,7 @@ public abstract class InteractableObject : MonoBehaviour
 {
     [Header("UI")]
     private TextMeshPro interactionText;
-    [SerializeField] private string message = "Press E to interact";
+    [SerializeField] protected string message = "Press E to interact";
 
     [Header("Settings")]
     [SerializeField] private KeyCode interactKey = KeyCode.E;
@@ -13,6 +13,8 @@ public abstract class InteractableObject : MonoBehaviour
     [SerializeField] protected AudioSource _audioSource;
 
     private bool playerInRange = false;
+
+    protected bool PlayerInRange => playerInRange;
 
     protected virtual void Start()
     {
@@ -61,6 +63,20 @@ public abstract class InteractableObject : MonoBehaviour
                 interactionText.gameObject.SetActive(false);
             }
         }
+    }
+
+    protected void SetInteractionMessage(string newMessage)
+    {
+        message = newMessage;
+
+        if (interactionText != null)
+            interactionText.text = message;
+    }
+
+    protected void SetInteractionMessageVisible(bool isVisible)
+    {
+        if (interactionText != null)
+            interactionText.gameObject.SetActive(isVisible);
     }
 
     protected abstract void Interact();

@@ -26,6 +26,7 @@ public class PedestalObject : InteractableObject
         if (RitualConditionsUI.instance.GetIfAllTrue() && !hasSpawnedDemon)
         {
             SetDemonSpawned(true);
+            ChangeMessage("Ритуал завершён. Демон призван.");
         }
     }
 
@@ -59,6 +60,11 @@ public class PedestalObject : InteractableObject
         if (GameSession.Instance == null || GameSession.Instance.HasRitualState == false)
             return;
 
-        SetDemonSpawned(GameSession.Instance.HasSpawnedDemon);
+        SetDemonSpawned(GameSession.Instance.HasSpawnedDemon);     
+    }
+
+    public void ChangeMessage(string Changedmessage)
+    {
+        message = Changedmessage;
     }
 }

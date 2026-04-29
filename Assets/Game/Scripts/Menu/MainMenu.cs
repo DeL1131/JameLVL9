@@ -7,6 +7,7 @@ public class MainMenu : Menu
     [SerializeField] private Button _buttonPlay;
     [SerializeField] private Button _buttonSettings;
     [SerializeField] private Button _buttonExit;
+    
 
     private UnityAction _playAction;
     private UnityAction _settingsAction;

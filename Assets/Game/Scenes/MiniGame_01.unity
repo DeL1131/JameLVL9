@@ -572,7 +572,7 @@ MonoBehaviour:
   _bulletCount: 5
   _spreadAngle: 40
   _bulletSpeed: 7
-  _damage: 8
+  _damage: 10
   _lifeTime: 5
   _targetMask:
     serializedVersion: 2
