@@ -1,5 +1,5 @@
-using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameCompleetMenu : Menu
@@ -18,7 +18,20 @@ public class GameCompleetMenu : Menu
 
     private void CloseGame()
     {
-        Application.Quit();
-        Debug.Log("Game quit.");
+        if (GameSession.Instance != null)
+            GameSession.Instance.ResetSession();
+
+        Time.timeScale = 1f;
+
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
+        if (GameFlowManager.Instance != null)
+        {
+            GameFlowManager.Instance.LoadRitualScene();
+            return;
+        }
+
+        SceneManager.LoadScene("RitualScene");
     }
 }

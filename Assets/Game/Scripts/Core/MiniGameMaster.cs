@@ -60,7 +60,6 @@ public class MiniGameMaster : MonoBehaviour
 
         _gameCompleeMenu.Open();
         PlayCreditsScroll();
-        Invoke(nameof(CloseGame), 13f);
 
     }
 
@@ -110,11 +109,5 @@ public class MiniGameMaster : MonoBehaviour
         }
 
         SceneManager.LoadScene("RitualScene");
-    }
-
-    private void CloseGame()
-    {
-        Application.Quit();
-        Debug.Log("Game quit.");
     }
 }

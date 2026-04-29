@@ -11,6 +11,9 @@ public class CreditsScroll : MonoBehaviour
     [SerializeField] private TMP_Text _text;
     [SerializeField] private CanvasGroup _creditsCanvasGroup;
 
+    [Header("Hide During Credits")]
+    [SerializeField] private GameObject[] _objectsToHide;
+
     [Header("Text")]
     [TextArea(10, 30)]
     [SerializeField] private string _creditsText;
@@ -18,7 +21,7 @@ public class CreditsScroll : MonoBehaviour
     [Header("Scroll")]
     [SerializeField] private float _startY = -700f;
     [SerializeField] private float _endY = 1200f;
-    [SerializeField] private float _speed = 100f;
+    [SerializeField] private float _speed = 50f;
 
     [Header("After Credits")]
     [SerializeField] private UnityEvent _onComplete;
@@ -41,12 +44,12 @@ public class CreditsScroll : MonoBehaviour
 
     public void Play()
     {
-        Debug.Log("Credits started");
-
         CacheReferences();
 
         if (_root != null)
             _root.SetActive(true);
+
+        HideObjects();
 
         DisableCreditsRaycasts();
 
@@ -65,26 +68,20 @@ public class CreditsScroll : MonoBehaviour
     {
         if (_textTransform == null)
         {
-            Debug.LogWarning("CreditsScroll cannot play because _textTransform is not assigned.");
+            Debug.LogWarning("CreditsScroll: Text Transform не назначен.");
             yield break;
         }
 
         if (_speed <= 0f)
-        {
-            Debug.LogWarning("CreditsScroll speed must be greater than 0. Using fallback speed 100.");
-            _speed = 100f;
-        }
+            _speed = 50f;
 
         if (_endY <= _startY)
-        {
-            Debug.LogWarning("CreditsScroll _endY must be greater than _startY. Using fallback end position.");
             _endY = _startY + 1200f;
-        }
 
         while (_textTransform.anchoredPosition.y < _endY)
         {
             Vector2 pos = _textTransform.anchoredPosition;
-            pos.y += (_speed * 0.5f) * Time.unscaledDeltaTime;
+            pos.y += _speed * Time.unscaledDeltaTime;
             _textTransform.anchoredPosition = pos;
 
             yield return null;
@@ -92,6 +89,15 @@ public class CreditsScroll : MonoBehaviour
 
         _scrollCoroutine = null;
         _onComplete?.Invoke();
+    }
+
+    private void HideObjects()
+    {
+        for (int i = 0; i < _objectsToHide.Length; i++)
+        {
+            if (_objectsToHide[i] != null)
+                _objectsToHide[i].SetActive(false);
+        }
     }
 
     private void CacheReferences()
