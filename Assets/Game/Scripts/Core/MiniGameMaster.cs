@@ -48,16 +48,17 @@ public class MiniGameMaster : MonoBehaviour
     {
         //_gameCompleeMenu.Open();
         //_audioSource.Stop();
-        if (GameSession.Instance != null)
-            GameSession.Instance.RecordBossFightResult(true);
+        //if (GameSession.Instance != null)
+        //    GameSession.Instance.RecordBossFightResult(true);
 
-        if (GameFlowManager.Instance != null)
-        {
-            GameFlowManager.Instance.LoadRitualScene();
-            return;
-        }
+        //if (GameFlowManager.Instance != null)
+        //{
+        //    GameFlowManager.Instance.LoadRitualScene();
+        //    return;
+        //}
 
-        SceneManager.LoadScene("RitualScene");
+        _gameCompleeMenu.Open();
+
     }
 
     public void GameOver()
