@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class GameSession : MonoBehaviour
@@ -12,6 +13,7 @@ public class GameSession : MonoBehaviour
     private bool _hasSpawnedDemon;
     private bool _hasBossFightResult;
     private bool _hasWonBossFight;
+    private readonly Dictionary<string, bool> _torchStates = new Dictionary<string, bool>();
 
     public bool IsGameStarted => _isGameStarted;
     public bool HasRitualState => _hasRitualState;
@@ -85,6 +87,31 @@ public class GameSession : MonoBehaviour
 
         if (_logStateChanges)
             Debug.Log(hasWon ? "Boss fight won. Returning to ritual state." : "Boss fight lost. Returning to ritual state.");
+    }
+
+    public void SaveTorchState(string torchId, bool isLit)
+    {
+        if (string.IsNullOrWhiteSpace(torchId))
+        {
+            Debug.LogWarning("Cannot save torch state because torch id is empty.");
+            return;
+        }
+
+        _torchStates[torchId] = isLit;
+        MarkGameStarted();
+
+        if (_logStateChanges)
+            Debug.Log($"Torch state saved: {torchId} = {(isLit ? "lit" : "unlit")}.");
+    }
+
+    public bool TryGetTorchState(string torchId, out bool isLit)
+    {
+        isLit = false;
+
+        if (string.IsNullOrWhiteSpace(torchId))
+            return false;
+
+        return _torchStates.TryGetValue(torchId, out isLit);
     }
 
     private void EnsurePentagramBufferSize(int size)

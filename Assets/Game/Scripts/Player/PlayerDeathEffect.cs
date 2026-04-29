@@ -7,6 +7,7 @@ public class PlayerDeathEffect : MonoBehaviour
     [Header("Death Settings")]
     [SerializeField] private float _deathDuration = 2.5f;
     [SerializeField] private bool _destroyAfterDeath = false;
+    
 
     [Header("Shake Settings")]
     [SerializeField] private float _shakeDistance = 0.04f;
@@ -15,6 +16,7 @@ public class PlayerDeathEffect : MonoBehaviour
     [SerializeField] private SpriteRenderer _spriteRenderer;
     [SerializeField] private MonoBehaviour _playerController;
 
+    [SerializeField] private BulletPatternRunner _bulletPatternRunner;
     private Coroutine _deathCoroutine;
     private Vector3 _startPosition;
 
@@ -30,7 +32,7 @@ public class PlayerDeathEffect : MonoBehaviour
     {
         if (_deathCoroutine != null)
             return;
-
+        _bulletPatternRunner.Stop();
         DisableControl();
 
         _deathCoroutine = StartCoroutine(DeathRoutine());

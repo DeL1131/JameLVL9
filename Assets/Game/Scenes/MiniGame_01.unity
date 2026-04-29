@@ -3309,6 +3309,7 @@ MonoBehaviour:
   _shakeDistance: 0.04
   _spriteRenderer: {fileID: 1916830742}
   _playerController: {fileID: 1916830739}
+  _bulletPatternRunner: {fileID: 100489804}
 --- !u!82 &1916830744
 AudioSource:
   m_ObjectHideFlags: 0
