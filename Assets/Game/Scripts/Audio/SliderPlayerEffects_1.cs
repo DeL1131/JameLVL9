@@ -24,8 +24,10 @@ public abstract class SliderVolume : MonoBehaviour
 
     private void Start()
     {
-        
-        ChangeVolume(_slider.value);     
+        if (GameSession.Instance != null && GameSession.Instance.TryGetAudioVolume(VolumeParameter, out float savedVolume))
+            _slider.SetValueWithoutNotify(savedVolume);
+
+        ChangeVolume(_slider.value);
     }
 
     private void OnEnable()
@@ -42,10 +44,12 @@ public abstract class SliderVolume : MonoBehaviour
     {
         volume = Mathf.Clamp(volume, _minVolumeValue, _maxVolumeValue);
 
-        if (_toggle.IsMuted == false)
+        bool isMuted = _toggle != null && _toggle.IsMuted;
+
+        if (isMuted == false)
             _mixer.audioMixer.SetFloat(VolumeParameter, Mathf.Log10(volume) * _decibelConversionFactor);
 
-        PlayerPrefs.SetFloat(VolumeParameter, volume);       
-        PlayerPrefs.Save();
+        if (GameSession.Instance != null)
+            GameSession.Instance.SaveAudioVolume(VolumeParameter, volume);
     }
 }

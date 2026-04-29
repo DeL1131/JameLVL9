@@ -14,12 +14,16 @@ public class GameSession : MonoBehaviour
     private bool _hasBossFightResult;
     private bool _hasWonBossFight;
     private readonly Dictionary<string, bool> _torchStates = new Dictionary<string, bool>();
+    private readonly Dictionary<string, float> _audioVolumes = new Dictionary<string, float>();
+    private bool _hasMuteState;
+    private bool _isMuted;
 
     public bool IsGameStarted => _isGameStarted;
     public bool HasRitualState => _hasRitualState;
     public bool HasSpawnedDemon => _hasSpawnedDemon;
     public bool HasBossFightResult => _hasBossFightResult;
     public bool HasWonBossFight => _hasWonBossFight;
+    public bool IsMuted => _isMuted;
 
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
     private static void Bootstrap()
@@ -112,6 +116,39 @@ public class GameSession : MonoBehaviour
             return false;
 
         return _torchStates.TryGetValue(torchId, out isLit);
+    }
+
+    public void SaveAudioVolume(string volumeParameter, float volume)
+    {
+        if (string.IsNullOrWhiteSpace(volumeParameter))
+        {
+            Debug.LogWarning("Cannot save audio volume because parameter name is empty.");
+            return;
+        }
+
+        _audioVolumes[volumeParameter] = volume;
+    }
+
+    public bool TryGetAudioVolume(string volumeParameter, out float volume)
+    {
+        volume = 1f;
+
+        if (string.IsNullOrWhiteSpace(volumeParameter))
+            return false;
+
+        return _audioVolumes.TryGetValue(volumeParameter, out volume);
+    }
+
+    public void SaveMuteState(bool isMuted)
+    {
+        _isMuted = isMuted;
+        _hasMuteState = true;
+    }
+
+    public bool TryGetMuteState(out bool isMuted)
+    {
+        isMuted = _isMuted;
+        return _hasMuteState;
     }
 
     private void EnsurePentagramBufferSize(int size)

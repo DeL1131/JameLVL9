@@ -13,7 +13,9 @@ public class ToggleMuteChange : MonoBehaviour
     private Toggle _toggle;
 
     private float _currentVolume;
+    private float _minVolumeValue = 0.0001f;
     private float _minVolume = -80f;
+    private float _decibelConversionFactor = 100f;
 
     public bool IsMuted { get; private set; }
 
@@ -25,8 +27,14 @@ public class ToggleMuteChange : MonoBehaviour
     private void Start()
     {
         _mixer.audioMixer.GetFloat(CommandMasterVolume, out _currentVolume);
-        IsMuted = PlayerPrefs.GetInt("IsMuted", 0) == 1;
-        _toggle.isOn = IsMuted;
+
+        if (GameSession.Instance != null && GameSession.Instance.TryGetMuteState(out bool savedIsMuted))
+            IsMuted = savedIsMuted;
+
+        _toggle.SetIsOnWithoutNotify(IsMuted);
+
+        if (IsMuted)
+            _mixer.audioMixer.SetFloat(CommandMasterVolume, _minVolume);
     }
 
     private void OnEnable()
@@ -50,10 +58,14 @@ public class ToggleMuteChange : MonoBehaviour
         else
         {
             IsMuted= false;
-            _mixer.audioMixer.SetFloat(CommandMasterVolume, _currentVolume);
+
+            if (GameSession.Instance != null && GameSession.Instance.TryGetAudioVolume(CommandMasterVolume, out float savedMasterVolume))
+                _mixer.audioMixer.SetFloat(CommandMasterVolume, Mathf.Log10(Mathf.Clamp(savedMasterVolume, _minVolumeValue, 1f)) * _decibelConversionFactor);
+            else
+                _mixer.audioMixer.SetFloat(CommandMasterVolume, _currentVolume);
         }
 
-        PlayerPrefs.SetInt("IsMuted", IsMuted ? 1 : 0);
-        PlayerPrefs.Save();
+        if (GameSession.Instance != null)
+            GameSession.Instance.SaveMuteState(IsMuted);
     }
 }
