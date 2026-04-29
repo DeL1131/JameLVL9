@@ -4,23 +4,30 @@ public class PedestalObject : InteractableObject
 {
     public static PedestalObject instance;
 
-    private AudioSource _audioSource;
-
     [SerializeField] private GameObject demonObject;
+    private bool hasSpawnedDemon = false;
+
+    public bool HasSpawnedDemon => hasSpawnedDemon;
+
     private void Awake()
     {
         _audioSource = GetComponent<AudioSource>();
         instance = this;
     }
+
+    protected override void Start()
+    {
+        base.Start();
+        RestoreSavedState();
+    }
+
     protected override void Interact()
     {
         if (RitualConditionsUI.instance.GetIfAllTrue() && !hasSpawnedDemon)
         {
-            hasSpawnedDemon = true;
-            demonObject.SetActive(true);
+            SetDemonSpawned(true);
         }
     }
-    private bool hasSpawnedDemon = false;
 
     //[SerializeField] private GameObject infoScroll;
     protected override void OnTriggerEnter2D(Collider2D other)
@@ -37,5 +44,21 @@ public class PedestalObject : InteractableObject
     {
         base.OnTriggerExit2D(other);
         PrefabReference.instance.infoScroll.SetActive(false);
+    }
+
+    public void SetDemonSpawned(bool spawned)
+    {
+        hasSpawnedDemon = spawned;
+
+        if (demonObject != null)
+            demonObject.SetActive(spawned);
+    }
+
+    private void RestoreSavedState()
+    {
+        if (GameSession.Instance == null || GameSession.Instance.HasRitualState == false)
+            return;
+
+        SetDemonSpawned(GameSession.Instance.HasSpawnedDemon);
     }
 }

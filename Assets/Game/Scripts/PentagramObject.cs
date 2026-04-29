@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class PentagramObject : InteractableObject
 {
@@ -11,6 +12,13 @@ public class PentagramObject : InteractableObject
     }
     [SerializeField] private ItemObject.ItemType[] inventory = new ItemObject.ItemType[5];
     private Vector2[] pentagramPoints = new Vector2[5];
+
+    protected override void Start()
+    {
+        base.Start();
+        StartCoroutine(RestoreSavedStateNextFrame());
+    }
+
     protected override void Interact()
     {
         if (Player.instance.carriedItem != null) //and enough capacity
@@ -58,5 +66,61 @@ public class PentagramObject : InteractableObject
             if (item == itemType) return true;
         }
         return false;
+    }
+
+    public ItemObject.ItemType[] GetInventorySnapshot()
+    {
+        ItemObject.ItemType[] snapshot = new ItemObject.ItemType[inventory.Length];
+        System.Array.Copy(inventory, snapshot, inventory.Length);
+        return snapshot;
+    }
+
+    private IEnumerator RestoreSavedStateNextFrame()
+    {
+        yield return null;
+
+        if (GameSession.Instance == null || GameSession.Instance.HasRitualState == false)
+            yield break;
+
+        RestoreInventory(GameSession.Instance.GetPentagramItems());
+    }
+
+    private void RestoreInventory(ItemObject.ItemType[] savedInventory)
+    {
+        if (savedInventory == null)
+            return;
+
+        int itemCount = Mathf.Min(inventory.Length, savedInventory.Length);
+
+        for (int i = 0; i < inventory.Length; i++)
+            inventory[i] = ItemObject.ItemType.empty;
+
+        ItemObject[] sceneItems = FindObjectsByType<ItemObject>(FindObjectsSortMode.None);
+
+        for (int i = 0; i < itemCount; i++)
+        {
+            ItemObject.ItemType itemType = savedInventory[i];
+
+            if (itemType == ItemObject.ItemType.empty)
+                continue;
+
+            inventory[i] = itemType;
+            ItemObject sceneItem = FindSceneItem(sceneItems, itemType);
+
+            if (sceneItem != null)
+                sceneItem.SetPentagramTargetPos(pentagramPoints[i]);
+        }
+    }
+
+    private ItemObject FindSceneItem(ItemObject[] sceneItems, ItemObject.ItemType itemType)
+    {
+        foreach (ItemObject item in sceneItems)
+        {
+            if (item.GetItemType() == itemType)
+                return item;
+        }
+
+        Debug.LogWarning($"Saved ritual item '{itemType}' was not found in the ritual scene.");
+        return null;
     }
 }

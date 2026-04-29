@@ -18,27 +18,43 @@ public class GameMenuNew : MonoBehaviour
 
     private void Awake()
     {
-        if (_startAsGameplayScene)
+        bool shouldStartAsGameplayScene = _startAsGameplayScene || IsGameAlreadyStarted();
+
+        if (shouldStartAsGameplayScene)
         {
             _isGameStarted = true;
+            _isPaused = false;
+
             Time.timeScale = 1f;
 
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
+
+            if (_canvas != null)
+                _canvas.SetActive(true);
         }
         else
         {
+            _isGameStarted = false;
+            _isPaused = false;
+
             Time.timeScale = 0f;
 
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
+
+            if (_canvas != null)
+                _canvas.SetActive(false);
         }
     }
 
     private void Start()
     {
-        if (_startAsGameplayScene)
+        if (_isGameStarted)
+        {
+            CloseMenusForGameplayStart();
             return;
+        }
 
         if (_mainMenu != null)
             OpenMenu(_mainMenu);
@@ -86,6 +102,9 @@ public class GameMenuNew : MonoBehaviour
 
     public void StartGame()
     {
+        if (GameSession.Instance != null)
+            GameSession.Instance.MarkGameStarted();
+
         _isGameStarted = true;
         _isPaused = false;
 
@@ -95,7 +114,10 @@ public class GameMenuNew : MonoBehaviour
         Cursor.visible = false;
 
         CloseCurrentMenu();
-        _canvas.SetActive(true);
+        CloseMenusForGameplayStart();
+
+        if (_canvas != null)
+            _canvas.SetActive(true);
     }
 
     public void PauseToSettings()
@@ -175,6 +197,20 @@ public class GameMenuNew : MonoBehaviour
         _currentMenu = null;
     }
 
+    private void CloseMenusForGameplayStart()
+    {
+        if (_mainMenu != null)
+            _mainMenu.Close();
+
+        if (_settingsMenu != null)
+            _settingsMenu.Close();
+
+        if (_settingsBackground != null)
+            _settingsBackground.SetActive(false);
+
+        _currentMenu = null;
+    }
+
     private System.Collections.IEnumerator DisableBackgroundDelayed(float delay)
     {
         yield return new WaitForSecondsRealtime(delay);
@@ -186,5 +222,10 @@ public class GameMenuNew : MonoBehaviour
     private void QuitGame()
     {
         Application.Quit();
+    }
+
+    private bool IsGameAlreadyStarted()
+    {
+        return GameSession.Instance != null && GameSession.Instance.IsGameStarted;
     }
 }

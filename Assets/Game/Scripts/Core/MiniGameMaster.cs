@@ -46,8 +46,9 @@ public class MiniGameMaster : MonoBehaviour
 
     private void OpenGameCompleteMenu()
     {
-        _gameCompleeMenu.Open();
-        _audioSource.Stop();
+        //_gameCompleeMenu.Open();
+        //_audioSource.Stop();
+        SceneManager.LoadScene("RitualScene");
     }
 
     public void GameOver()
@@ -69,8 +70,9 @@ public class MiniGameMaster : MonoBehaviour
 
     private void OpenGameOverMenu()
     {
-        _gameOverMenu.Open();
-        _audioSource.Stop();
-        Time.timeScale = 0f;
+        //_gameOverMenu.Open();
+        //_audioSource.Stop();
+        //Time.timeScale = 0f;
+        SceneManager.LoadScene("RitualScene");
     }
 }

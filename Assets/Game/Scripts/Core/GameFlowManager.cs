@@ -17,6 +17,16 @@ public class GameFlowManager : MonoBehaviour
         "MiniGame_05"
     };
 
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
+    private static void Bootstrap()
+    {
+        if (Instance != null)
+            return;
+
+        GameObject gameFlowManagerObject = new GameObject(nameof(GameFlowManager));
+        gameFlowManagerObject.AddComponent<GameFlowManager>();
+    }
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -32,6 +42,11 @@ public class GameFlowManager : MonoBehaviour
     public void LoadMainGameScene()
     {
         LoadScene(_mainGameScene);
+    }
+
+    public void LoadRitualScene()
+    {
+        LoadMainGameScene();
     }
 
     public void LoadMiniGame(int miniGameIndex)

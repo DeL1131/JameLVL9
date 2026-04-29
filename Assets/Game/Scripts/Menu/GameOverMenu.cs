@@ -1,6 +1,5 @@
 using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameOverMenu : Menu
@@ -27,7 +26,15 @@ public class GameOverMenu : Menu
 
     private void RestartGame()
     {
+        if (GameSession.Instance != null)
+            GameSession.Instance.RecordBossFightResult(false);
 
-        SceneManager.LoadScene("RitualScene");
+        if (GameFlowManager.Instance != null)
+        {
+            GameFlowManager.Instance.LoadRitualScene();
+            return;
+        }
+
+        Debug.LogWarning("GameOverMenu could not find a GameFlowManager.");
     }
 }

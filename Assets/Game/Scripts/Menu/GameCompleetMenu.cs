@@ -1,6 +1,5 @@
 using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameCompleetMenu : Menu
@@ -19,6 +18,15 @@ public class GameCompleetMenu : Menu
 
     private void CloseGame()
     {
-        Application.Quit();
+        if (GameSession.Instance != null)
+            GameSession.Instance.RecordBossFightResult(true);
+
+        if (GameFlowManager.Instance != null)
+        {
+            GameFlowManager.Instance.LoadRitualScene();
+            return;
+        }
+
+        Debug.LogWarning("GameCompleetMenu could not find a GameFlowManager.");
     }
 }
