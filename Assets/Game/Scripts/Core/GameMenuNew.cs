@@ -147,7 +147,7 @@ public class GameMenuNew : MonoBehaviour
         if (_canvas != null)
             _canvas.SetActive(true);
 
-        if (_settingsBackground != null)
+        if (_isGameStarted == false && _settingsBackground != null)
             _settingsBackground.SetActive(true);
 
         OpenMenu(_settingsMenu);
