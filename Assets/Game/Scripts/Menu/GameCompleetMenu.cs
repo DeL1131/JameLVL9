@@ -18,15 +18,7 @@ public class GameCompleetMenu : Menu
 
     private void CloseGame()
     {
-        if (GameSession.Instance != null)
-            GameSession.Instance.RecordBossFightResult(true);
-
-        if (GameFlowManager.Instance != null)
-        {
-            GameFlowManager.Instance.LoadRitualScene();
-            return;
-        }
-
-        Debug.LogWarning("GameCompleetMenu could not find a GameFlowManager.");
+        Application.Quit();
+        Debug.Log("Game quit.");
     }
 }

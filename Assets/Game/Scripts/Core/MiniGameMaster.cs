@@ -10,6 +10,7 @@ public class MiniGameMaster : MonoBehaviour
     [SerializeField] BossDeathEffect _bossDeathEffect;
     [SerializeField] private GameOverMenu _gameOverMenu;
     [SerializeField] private GameCompleetMenu _gameCompleeMenu;
+    [SerializeField] private CreditsScroll _creditsScroll;
     [SerializeField] private PlayerDeathEffect _playerDeathEffect;
     [SerializeField] private AudioSource _audioSource;
 
@@ -58,7 +59,23 @@ public class MiniGameMaster : MonoBehaviour
         //}
 
         _gameCompleeMenu.Open();
+        PlayCreditsScroll();
+        Invoke(nameof(CloseGame), 13f);
 
+    }
+
+    private void PlayCreditsScroll()
+    {
+        if (_creditsScroll == null)
+            _creditsScroll = FindFirstObjectByType<CreditsScroll>(FindObjectsInactive.Include);
+
+        if (_creditsScroll == null)
+        {
+            Debug.LogWarning("MiniGameMaster could not find CreditsScroll.");
+            return;
+        }
+
+        _creditsScroll.Play();
     }
 
     public void GameOver()
@@ -93,5 +110,11 @@ public class MiniGameMaster : MonoBehaviour
         }
 
         SceneManager.LoadScene("RitualScene");
+    }
+
+    private void CloseGame()
+    {
+        Application.Quit();
+        Debug.Log("Game quit.");
     }
 }
