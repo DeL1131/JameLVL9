@@ -10,6 +10,9 @@ public class DemonObject : InteractableObject
     [SerializeField] private string _startFightMessage = "E - Start fight";
     [SerializeField] private bool _showSummonedMessageAlways = true;
 
+    [Header("Boss Text Style")]
+    [SerializeField] private string _bossTextColor = "red";
+
     [Header("Boss Result Messages")]
     [SerializeField] private string _bossDefeatedMessage = "Ты доказал свою силу.";
     [SerializeField] private string _bossDefeatedInteractionMessage = "Ты доказал свою силу. Нет нужды нам сражаться вновь.";
@@ -72,7 +75,7 @@ public class DemonObject : InteractableObject
         if (TryRefreshBossResultMessage())
             return;
 
-        SetInteractionMessage(_bossSummonedMessage);
+        SetBossInteractionMessage(_bossSummonedMessage);
 
         if (_showSummonedMessageAlways)
             SetInteractionMessageVisible(true);
@@ -80,10 +83,13 @@ public class DemonObject : InteractableObject
 
     private void RefreshBossMessageForPlayerRange()
     {
-        if (TryRefreshBossResultMessage())
+        if (GameSession.Instance != null && GameSession.Instance.HasBossFightResult && GameSession.Instance.HasWonBossFight)
+        {
+            TryRefreshBossResultMessage();
             return;
+        }
 
-        SetInteractionMessage(_startFightMessage);
+        SetBossInteractionMessage(_startFightMessage);
         SetInteractionMessageVisible(true);
     }
 
@@ -92,7 +98,7 @@ public class DemonObject : InteractableObject
         if (GameSession.Instance == null || GameSession.Instance.HasBossFightResult == false)
             return false;
 
-        SetInteractionMessage(GameSession.Instance.HasWonBossFight ? _bossDefeatedMessage : _bossLostMessage);
+        SetBossInteractionMessage(GameSession.Instance.HasWonBossFight ? _bossDefeatedMessage : _bossLostMessage);
 
         if (_showBossResultMessageAlways)
             SetInteractionMessageVisible(true);
@@ -110,12 +116,12 @@ public class DemonObject : InteractableObject
 
     private IEnumerator ShowTemporaryMessage(string temporaryMessage, string restoredMessage)
     {
-        SetInteractionMessage(temporaryMessage);
+        SetBossInteractionMessage(temporaryMessage);
         SetInteractionMessageVisible(true);
 
         yield return new WaitForSeconds(_temporaryMessageDuration);
 
-        SetInteractionMessage(restoredMessage);
+        SetBossInteractionMessage(restoredMessage);
 
         if (_showBossResultMessageAlways || PlayerInRange)
             SetInteractionMessageVisible(true);
@@ -124,5 +130,10 @@ public class DemonObject : InteractableObject
     private bool HasBossResultMessage()
     {
         return GameSession.Instance != null && GameSession.Instance.HasBossFightResult;
+    }
+
+    private void SetBossInteractionMessage(string text)
+    {
+        SetInteractionMessage($"<color={_bossTextColor}>{text}</color>");
     }
 }

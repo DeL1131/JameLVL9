@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class GameMenuNew : MonoBehaviour
 {
@@ -58,6 +59,17 @@ public class GameMenuNew : MonoBehaviour
 
         if (_mainMenu != null)
             OpenMenu(_mainMenu);
+    }
+
+    private void Update()
+    {
+        if (_isGameStarted == false)
+            return;
+
+        if (Keyboard.current == null || Keyboard.current.escapeKey.wasPressedThisFrame == false)
+            return;
+
+        ToggleSettingsPause();
     }
 
     private void OnEnable()
@@ -125,7 +137,6 @@ public class GameMenuNew : MonoBehaviour
         if (_isGameStarted == false)
             return;
 
-        Debug.Log("PauseToSettings called");
         _isPaused = true;
 
         Time.timeScale = 0f;
@@ -133,7 +144,12 @@ public class GameMenuNew : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
 
-        Debug.Log("PauseToSettings");
+        if (_canvas != null)
+            _canvas.SetActive(true);
+
+        if (_settingsBackground != null)
+            _settingsBackground.SetActive(true);
+
         OpenMenu(_settingsMenu);
     }
 
@@ -150,6 +166,20 @@ public class GameMenuNew : MonoBehaviour
         Cursor.visible = false;
 
         CloseCurrentMenu();
+
+        if (_settingsBackground != null)
+            _settingsBackground.SetActive(false);
+    }
+
+    public void ToggleSettingsPause()
+    {
+        if (_isPaused)
+        {
+            ResumeGame();
+            return;
+        }
+
+        PauseToSettings();
     }
 
     private void OpenSettings()
