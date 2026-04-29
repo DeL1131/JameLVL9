@@ -10,6 +10,8 @@ public abstract class InteractableObject : MonoBehaviour
     [Header("Settings")]
     [SerializeField] private KeyCode interactKey = KeyCode.E;
 
+    [SerializeField] protected AudioSource _audioSource;
+
     private bool playerInRange = false;
 
     protected virtual void Start()

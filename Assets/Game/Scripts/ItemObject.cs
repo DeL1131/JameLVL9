@@ -64,6 +64,10 @@ public class ItemObject : InteractableObject
 
     protected override void Interact()
     {
+        if (_audioSource != null)
+        {
+            _audioSource.Play();
+        }
         isPickedUp = true;
         isReturning = false;
         Player.instance.PickUpItem(this);
