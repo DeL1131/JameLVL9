@@ -60,6 +60,7 @@ public class MiniGameMaster : MonoBehaviour
 
         _gameCompleeMenu.Open();
         PlayCreditsScroll();
+        _gameCompleeMenu.EnableInteractionDuringCredits();
 
     }
 

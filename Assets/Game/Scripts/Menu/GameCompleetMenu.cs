@@ -16,6 +16,22 @@ public class GameCompleetMenu : Menu
         _buttonCloseGame.onClick.RemoveListener(CloseGame);
     }
 
+    public void EnableInteractionDuringCredits()
+    {
+        if (CanvasGroup == null)
+            CanvasGroup = GetComponent<CanvasGroup>();
+
+        if (CanvasGroup != null)
+        {
+            CanvasGroup.interactable = true;
+            CanvasGroup.blocksRaycasts = true;
+            CanvasGroup.ignoreParentGroups = true;
+        }
+
+        if (_buttonCloseGame != null)
+            _buttonCloseGame.interactable = true;
+    }
+
     private void CloseGame()
     {
         if (GameSession.Instance != null)
