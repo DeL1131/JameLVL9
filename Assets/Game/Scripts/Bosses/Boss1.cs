@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using System;
+using Unity.VisualScripting;
 
 public class Boss1 : MonoBehaviour, IDamageable
 {
@@ -13,6 +14,11 @@ public class Boss1 : MonoBehaviour, IDamageable
     [SerializeField] private ThreatSpawner _threatSpawner;
     [SerializeField] private LaserBeamAbility _laserPrefab;
     [SerializeField] private Transform _mouthPoint;
+    [SerializeField] private BulletPatternRunner _bulletPatternRunner;
+    [SerializeField] private AudioClip _laserChargeSound;
+    [SerializeField] private AudioClip _laserAttackSound;
+    [SerializeField] private AudioSource _audioSource;
+
 
     public event Action<float> Damaged;
 
@@ -31,9 +37,11 @@ public class Boss1 : MonoBehaviour, IDamageable
     private Coroutine _bossRoutine;
     private Coroutine _laserRoutine;
     private LaserBeamAbility _currentLaser;
+    private Health _health;
 
     private void Awake()
     {
+        _health = GetComponent<Health>();
         if (_animator == null)
             _animator = GetComponent<Animator>();
 
@@ -65,6 +73,16 @@ public class Boss1 : MonoBehaviour, IDamageable
     {
         Debug.Log($"Босс получил {damage} урона");
         Damaged?.Invoke(damage);
+
+        if (_health.CurrentHealth <= 0)
+        {
+            StopCoroutine(_bossRoutine);
+            StopCoroutine(_laserRoutine);
+            StopLaser();
+            _threatSpawner.StopSpawning();
+            _bulletPatternRunner.Stop();
+        }
+          
     }
 
     private IEnumerator BossRoutine()
@@ -117,6 +135,12 @@ public class Boss1 : MonoBehaviour, IDamageable
         _threatSpawner.StartSpawning();
     }
 
+    public void OnLaserCharge()
+    {
+        _audioSource.clip = _laserChargeSound;
+        _audioSource.PlayOneShot(_laserChargeSound);
+    }
+
     public void OnLaserFire()
     {
         if (_laserPrefab == null || _mouthPoint == null)
@@ -135,10 +159,13 @@ public class Boss1 : MonoBehaviour, IDamageable
         );
 
         _currentLaser.Activate(_mouthPoint);
+        _audioSource.clip = _laserAttackSound;
+        _audioSource.PlayOneShot(_laserAttackSound);
     }
 
     public void OnLaserEnd()
     {
+        _audioSource.Stop();
         StopLaser();
     }
 

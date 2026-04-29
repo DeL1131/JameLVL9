@@ -5,9 +5,13 @@ using UnityEngine.SceneManagement;
 public class MiniGameMaster : MonoBehaviour
 {
     [SerializeField] private GameMusic _gameMusic;
-    [SerializeField] private GameOverMenu _endGameScreen;
     [SerializeField] Health _playerHealth;
     [SerializeField] Health _bossHealth;
+    [SerializeField] BossDeathEffect _bossDeathEffect;
+    [SerializeField] private GameOverMenu _gameOverMenu;
+    [SerializeField] private GameCompleetMenu _gameCompleeMenu;
+    [SerializeField] private PlayerDeathEffect _playerDeathEffect;
+    [SerializeField] private AudioSource _audioSource;
 
     private bool _isGameEnded;
 
@@ -25,23 +29,25 @@ public class MiniGameMaster : MonoBehaviour
 
     public void CompleteGame()
     {
-        //if (_isGameEnded)
-        //    return;
+        if (_isGameEnded)
+            return;
 
-        //_isGameEnded = true;
+        _isGameEnded = true;
 
-        //if (_gameMusic != null)
-        //    _gameMusic.PlayGameCompleteMusic();
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
 
-        //if (_endGameScreen != null)
-        //    _endGameScreen.Open();
+        if (_gameMusic != null)
+            _gameMusic.PlayGameCompleteMusic();
 
-        //Time.timeScale = 0f;
+        _bossDeathEffect.PlayDeath();   
+        Invoke(nameof(OpenGameCompleteMenu), 3f);
+    }
 
-        //Cursor.lockState = CursorLockMode.None;
-        //Cursor.visible = true;
-
-        SceneManager.LoadScene("RitualScene");
+    private void OpenGameCompleteMenu()
+    {
+        _gameCompleeMenu.Open();
+        _audioSource.Stop();
     }
 
     public void GameOver()
@@ -54,12 +60,17 @@ public class MiniGameMaster : MonoBehaviour
         if (_gameMusic != null)
             _gameMusic.PlayGameOverMusic();
 
-        if (_endGameScreen != null)
-            _endGameScreen.Open();
-
-        Time.timeScale = 0f;
-
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+
+        _playerDeathEffect.PlayDeath();
+        Invoke(nameof(OpenGameOverMenu), 3f);
+    }
+
+    private void OpenGameOverMenu()
+    {
+        _gameOverMenu.Open();
+        _audioSource.Stop();
+        Time.timeScale = 0f;
     }
 }

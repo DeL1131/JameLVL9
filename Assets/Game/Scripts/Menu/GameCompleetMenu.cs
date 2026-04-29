@@ -3,31 +3,22 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class GameOverMenu : Menu
+public class GameCompleetMenu : Menu
 {
     [SerializeField] private Button _buttonCloseGame;
-    [SerializeField] private Button _buttonRestartGame;
 
     private void OnEnable()
     {
         _buttonCloseGame.onClick.AddListener(CloseGame);
-        _buttonRestartGame.onClick.AddListener(RestartGame);
     }
 
     private void OnDisable()
     {
         _buttonCloseGame.onClick.RemoveListener(CloseGame);
-        _buttonRestartGame.onClick.RemoveListener(RestartGame);
     }
 
     private void CloseGame()
     {
         Application.Quit();
-    }
-
-    private void RestartGame()
-    {
-
-        SceneManager.LoadScene("RitualScene");
     }
 }
