@@ -2364,14 +2364,6 @@ PrefabInstance:
       propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 457921465384111328, guid: 96853fbb5f6f252448536993f485519b, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 457921465384111328, guid: 96853fbb5f6f252448536993f485519b, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2162894769998435586, guid: 96853fbb5f6f252448536993f485519b, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -2383,18 +2375,6 @@ PrefabInstance:
     - target: {fileID: 2162894769998435586, guid: 96853fbb5f6f252448536993f485519b, type: 3}
       propertyPath: m_AnchorMin.x
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2692710241139501806, guid: 96853fbb5f6f252448536993f485519b, type: 3}
-      propertyPath: m_Value
-      value: 0.449
-      objectReference: {fileID: 0}
-    - target: {fileID: 2906511784327397709, guid: 96853fbb5f6f252448536993f485519b, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0.606
-      objectReference: {fileID: 0}
-    - target: {fileID: 2906511784327397709, guid: 96853fbb5f6f252448536993f485519b, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4975741230319383627, guid: 96853fbb5f6f252448536993f485519b, type: 3}
       propertyPath: m_AnchorMax.x
@@ -2411,14 +2391,6 @@ PrefabInstance:
     - target: {fileID: 5389720702496174874, guid: 96853fbb5f6f252448536993f485519b, type: 3}
       propertyPath: m_Name
       value: SettingsMenu
-      objectReference: {fileID: 0}
-    - target: {fileID: 8115203847150772719, guid: 96853fbb5f6f252448536993f485519b, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0.585
-      objectReference: {fileID: 0}
-    - target: {fileID: 8115203847150772719, guid: 96853fbb5f6f252448536993f485519b, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8266675705243011083, guid: 96853fbb5f6f252448536993f485519b, type: 3}
       propertyPath: m_Pivot.x
@@ -19371,7 +19343,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player
   _maxSpeed: 1.5
-  _acceleration: 350
+  _acceleration: 210
   _friction: 250
   carriedItem: {fileID: 0}
 --- !u!95 &6365821887240694675

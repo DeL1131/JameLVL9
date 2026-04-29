@@ -93,6 +93,26 @@ public class GameSession : MonoBehaviour
             Debug.Log(hasWon ? "Boss fight won. Returning to ritual state." : "Boss fight lost. Returning to ritual state.");
     }
 
+    public void ResetSession()
+    {
+        for (int i = 0; i < _pentagramItems.Length; i++)
+            _pentagramItems[i] = ItemObject.ItemType.empty;
+
+        _isGameStarted = false;
+        _hasRitualState = false;
+        _hasSpawnedDemon = false;
+        _hasBossFightResult = false;
+        _hasWonBossFight = false;
+        _hasMuteState = false;
+        _isMuted = false;
+
+        _torchStates.Clear();
+        _audioVolumes.Clear();
+
+        if (_logStateChanges)
+            Debug.Log("Game session reset. Returning to initial main menu state.");
+    }
+
     public void SaveTorchState(string torchId, bool isLit)
     {
         if (string.IsNullOrWhiteSpace(torchId))

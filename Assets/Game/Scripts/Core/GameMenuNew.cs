@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class GameMenuNew : MonoBehaviour
 {
@@ -104,6 +105,10 @@ public class GameMenuNew : MonoBehaviour
 
             case ButtonCommands.Commands.CommandButtonCloseSettingsMenu:
                 CloseSettings();
+                break;
+
+            case ButtonCommands.Commands.CommandButtonMainToMenu:
+                RestartToMainMenu();
                 break;
 
             case ButtonCommands.Commands.CommandButtonExit:
@@ -252,6 +257,28 @@ public class GameMenuNew : MonoBehaviour
     private void QuitGame()
     {
         Application.Quit();
+    }
+
+    private void RestartToMainMenu()
+    {
+        if (GameSession.Instance != null)
+            GameSession.Instance.ResetSession();
+
+        _isGameStarted = false;
+        _isPaused = false;
+
+        Time.timeScale = 1f;
+
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
+        if (GameFlowManager.Instance != null)
+        {
+            GameFlowManager.Instance.LoadRitualScene();
+            return;
+        }
+
+        SceneManager.LoadScene("RitualScene");
     }
 
     private bool IsGameAlreadyStarted()

@@ -8,6 +8,7 @@ public static class ButtonCommands
         public const string CommandButtonMediumComplexity = "Medium";
         public const string CommandButtonHardComplexity = "Hard";
         public const string CommandButtonCloseSettingsMenu = "CloseSettingsMenu";
+        public const string CommandButtonMainToMenu = "MainToMenu";
         public const string CommandButtonExit = "ExitGame";
 
     }

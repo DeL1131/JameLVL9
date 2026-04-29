@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.SceneManagement;
 
 public class GameMenu : MonoBehaviour
 {
@@ -60,6 +61,9 @@ public class GameMenu : MonoBehaviour
             case ButtonCommands.Commands.CommandButtonPlay:
                 StartGame();
                 break;
+            case ButtonCommands.Commands.CommandButtonMainToMenu:
+                RestartToMainMenu();
+                break;
             case ButtonCommands.Commands.CommandButtonExit:
                 CloseGame();
                 break;
@@ -79,6 +83,24 @@ public class GameMenu : MonoBehaviour
     private void CloseGame()
     {
         Application.Quit();
+    }
+
+    private void RestartToMainMenu()
+    {
+        if (GameSession.Instance != null)
+            GameSession.Instance.ResetSession();
+
+        Time.timeScale = 1f;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
+        if (GameFlowManager.Instance != null)
+        {
+            GameFlowManager.Instance.LoadRitualScene();
+            return;
+        }
+
+        SceneManager.LoadScene("RitualScene");
     }
 
     private void StartGame()
