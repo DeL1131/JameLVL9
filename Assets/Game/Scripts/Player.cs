@@ -45,7 +45,13 @@ public class Player : MonoBehaviour
         if (_rb.linearVelocity.magnitude > _maxSpeed)
             _rb.linearVelocity = _rb.linearVelocity.normalized * _maxSpeed;
 
-        UpdateAnimation();
+        UpdateAnimation(input);
+    }
+
+    private void UpdateAnimation(Vector2 input)
+    {
+        float speed = input != Vector2.zero ? 1f : 0f;
+        _animator.SetFloat("Speed", speed);
     }
 
     private void UpdateAnimation()
